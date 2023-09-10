@@ -1,5 +1,13 @@
 // Salutation personnalisée :
 
+const readline = require('readline');
+
+const rl = readline.createInterface(process.stdin, process.stdout)
+rl.question('Quel est votre prénom ? ', (prenom) => {
+    console.log(`Bonjour ${prenom} !`)
+    rl.close();
+})
+
 // Écrivez un programme qui demande à l'utilisateur son prénom.
 // Affichez une salutation telle que "Bonjour, [prénom] !".
 // Calculatrice simple :
