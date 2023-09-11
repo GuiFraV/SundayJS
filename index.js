@@ -15,6 +15,8 @@ const rl = readline.createInterface(process.stdin, process.stdout)
 // Demandez à l'utilisateur une opération (addition, soustraction, multiplication, division).
 // Affichez le résultat de l'opération.
 
+/* 
+
 const firstNumber = [];
 const secondNumber = [];
 const op = [];
@@ -63,15 +65,22 @@ rl.question('Donnez-moi un nombre', (nbr1) => {
         })
     })
 })
-
-
-
-
-
+*/
 
 // Table de multiplication :
 // Demandez à l'utilisateur un nombre.
 // Affichez la table de multiplication pour ce nombre de 1 à 10.
+
+
+rl.question('donnez moi un nombre ', (nbr) => {
+    
+    for(let i = 0; i<=10; i++){
+        console.log(`${nbr} * ${i} = ${nbr*i}`)
+    }
+    rl.close();
+})
+
+
 // Palindrome :
 
 // Demandez à l'utilisateur un mot.
