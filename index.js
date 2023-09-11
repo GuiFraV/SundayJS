@@ -87,14 +87,11 @@ rl.question('donnez moi un nombre ', (nbr) => {
 // Demandez à l'utilisateur un mot.
 // Vérifiez si ce mot est un palindrome (il se lit de la même manière dans les deux sens, comme "radar" ou "kayak").
 
-/*rl.question('donnez moi un mot :', (mot) => {
+rl.question('donnez moi un mot :', (mot) => {
 
     let motTest = mot.split('');
 
     let reverseWord = motTest.reverse().join('');
-
-
-    console.log(reverseWord)
 
     if(reverseWord === mot){
         console.log('Ce mot est un palindrome ! GG')
@@ -104,7 +101,7 @@ rl.question('donnez moi un nombre ', (nbr) => {
 
     rl.close();
 })
-*/
+
 // Autre méthode
 rl.question('donnez moi un mot :', (mot) => {
 
