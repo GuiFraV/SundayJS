@@ -87,7 +87,7 @@ rl.question('donnez moi un nombre ', (nbr) => {
 // Demandez à l'utilisateur un mot.
 // Vérifiez si ce mot est un palindrome (il se lit de la même manière dans les deux sens, comme "radar" ou "kayak").
 
-rl.question('donnez moi un mot :', (mot) => {
+/*rl.question('donnez moi un mot :', (mot) => {
 
     let motTest = mot.split('');
 
@@ -101,6 +101,25 @@ rl.question('donnez moi un mot :', (mot) => {
     }else{
         console.log("Ce n'est pas un palindrome")
     }
+
+    rl.close();
+})
+*/
+// Autre méthode
+rl.question('donnez moi un mot :', (mot) => {
+
+   let estUnPalindrome = true;
+
+   for(let i = 0 ; i < mot.length / 2 ; i++){
+
+        if(mot[i] !== mot[mot.length -1 - i]){
+            estUnPalindrome = false;
+            break;
+        }
+
+   }
+
+   estUnPalindrome ? console.log('Ceci est un palindrome, GG !') : console.log("Ceci n'est pas un palindrome");
 
     rl.close();
 })
