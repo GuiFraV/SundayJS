@@ -72,6 +72,7 @@ rl.question('Donnez-moi un nombre', (nbr1) => {
 // Affichez la table de multiplication pour ce nombre de 1 à 10.
 
 
+/*
 rl.question('donnez moi un nombre ', (nbr) => {
     
     for(let i = 0; i<=10; i++){
@@ -79,14 +80,33 @@ rl.question('donnez moi un nombre ', (nbr) => {
     }
     rl.close();
 })
+*/
 
 
 // Palindrome :
-
 // Demandez à l'utilisateur un mot.
 // Vérifiez si ce mot est un palindrome (il se lit de la même manière dans les deux sens, comme "radar" ou "kayak").
-// Compteur de voyelles :
 
+rl.question('donnez moi un mot :', (mot) => {
+
+    let motTest = mot.split('');
+
+    let reverseWord = motTest.reverse().join('');
+
+
+    console.log(reverseWord)
+
+    if(reverseWord === mot){
+        console.log('Ce mot est un palindrome ! GG')
+    }else{
+        console.log("Ce n'est pas un palindrome")
+    }
+
+    rl.close();
+})
+
+
+// Compteur de voyelles :
 // Demandez à l'utilisateur une phrase ou un mot.
 // Comptez et affichez le nombre de voyelles dans cette phrase ou ce mot.
 // Liste de courses :
