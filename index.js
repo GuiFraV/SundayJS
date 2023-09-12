@@ -127,7 +127,7 @@ rl.question('donnez moi un mot :', (mot) => {
 // Comptez et affichez le nombre de voyelles dans cette phrase ou ce mot.
 
 
-rl.question('Donnez-moi un mot ou une phrase : ', (mot) => {
+/*rl.question('Donnez-moi un mot ou une phrase : ', (mot) => {
 
     const voyelles = ['a','e','i','o','u','y'];
     let nbrVoyelle = 0;
@@ -151,18 +151,30 @@ rl.question('Donnez-moi un mot ou une phrase : ', (mot) => {
 
 
 })
+*/
 
 
 
 
 // Liste de courses :
-
 // Créez une liste vide de courses.
 // Permettez à l'utilisateur d'ajouter des articles à la liste, d'en supprimer ou d'afficher la liste.
-// Nombre pair ou impair :
 
+
+// Nombre pair ou impair :
 // Demandez à l'utilisateur un nombre.
 // Dites à l'utilisateur si le nombre est pair ou impair.
+
+rl.question('Donnez moi un nombre/chiffre : ', (nbr) => {
+
+    nbr % 2 == 0 ? console.log("C'est pair") : console.log("C'est impair")
+    rl.close();
+
+})
+
+
+
+
 // Jeu de devinette :
 
 // Choisissez un nombre aléatoire entre 1 et 100.
