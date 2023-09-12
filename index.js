@@ -87,7 +87,7 @@ rl.question('donnez moi un nombre ', (nbr) => {
 // Demandez à l'utilisateur un mot.
 // Vérifiez si ce mot est un palindrome (il se lit de la même manière dans les deux sens, comme "radar" ou "kayak").
 
-rl.question('donnez moi un mot :', (mot) => {
+/*rl.question('donnez moi un mot :', (mot) => {
 
     let motTest = mot.split('');
 
@@ -120,11 +120,41 @@ rl.question('donnez moi un mot :', (mot) => {
 
     rl.close();
 })
-
+*/
 
 // Compteur de voyelles :
 // Demandez à l'utilisateur une phrase ou un mot.
 // Comptez et affichez le nombre de voyelles dans cette phrase ou ce mot.
+
+
+rl.question('Donnez-moi un mot ou une phrase : ', (mot) => {
+
+    const voyelles = ['a','e','i','o','u','y'];
+    let nbrVoyelle = 0;
+
+    for(let i = 0 ; i< mot.length ; i++){
+
+        for(let y = 0; y<voyelles.length; y++){
+
+            if(mot[i] === voyelles[y]){
+
+                nbrVoyelle++;
+            }
+
+
+        }
+
+    }
+
+    console.log(nbrVoyelle);
+    rl.close();
+
+
+})
+
+
+
+
 // Liste de courses :
 
 // Créez une liste vide de courses.
