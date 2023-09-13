@@ -204,14 +204,24 @@ askQuestion();
 // Demandez à l'utilisateur une température en Celsius.
 // Convertissez cette température en Fahrenheit et affichez-la.
 
+/*
 rl.question("Donnez-moi une température : ", (temp) => {
 
     console.log(`La température est de ${(temp * (9/5)) + 32} Fahrenheit`)
     rl.close();
 })
-
-
+*/
 
 // Tri de nombres :
 // Demandez à l'utilisateur de saisir une série de nombres (par exemple, séparés par des virgules).
 // Triez ces nombres et affichez-les dans l'ordre croissant.
+
+rl.question('Donnez moi une série de nombres : ', (arr) => {
+    
+    const split = arr.split(',')
+
+    console.log(split.sort((a,b) => {
+        return a - b;
+    }))
+    rl.close();
+})
