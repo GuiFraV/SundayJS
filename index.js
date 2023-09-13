@@ -165,21 +165,47 @@ rl.question('donnez moi un mot :', (mot) => {
 // Demandez à l'utilisateur un nombre.
 // Dites à l'utilisateur si le nombre est pair ou impair.
 
-rl.question('Donnez moi un nombre/chiffre : ', (nbr) => {
+/*rl.question('Donnez moi un nombre/chiffre : ', (nbr) => {
 
     nbr % 2 == 0 ? console.log("C'est pair") : console.log("C'est impair")
     rl.close();
 
 })
+*/
 
 
 
 
 // Jeu de devinette :
-
 // Choisissez un nombre aléatoire entre 1 et 100.
 // Demandez à l'utilisateur de deviner le nombre.
 // Donnez-lui des indices ("trop haut !" ou "trop bas !") jusqu'à ce qu'il devine correctement.
+
+const randomNumber = Math.floor(Math.random() * 100);
+
+function askQuestion() {
+    rl.question('Donnez moi un nombre : ', (nbr) => {
+        if (nbr == randomNumber) {
+            console.log('Bravo vous avez trouvé le bon nombre !');
+            rl.close();
+        } else if (nbr > randomNumber) {
+            console.log('Trop haut !');
+            askQuestion(); // Posez à nouveau la question
+        } else if (nbr < randomNumber) {
+            console.log('Trop bas !');
+            askQuestion(); // Posez à nouveau la question
+        }
+    });
+}
+
+askQuestion();
+
+
+
+
+
+
+
 // Conversion de température :
 
 // Demandez à l'utilisateur une température en Celsius.
