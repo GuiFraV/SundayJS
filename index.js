@@ -173,14 +173,12 @@ rl.question('donnez moi un mot :', (mot) => {
 })
 */
 
-
-
-
 // Jeu de devinette :
 // Choisissez un nombre aléatoire entre 1 et 100.
 // Demandez à l'utilisateur de deviner le nombre.
 // Donnez-lui des indices ("trop haut !" ou "trop bas !") jusqu'à ce qu'il devine correctement.
 
+/*
 const randomNumber = Math.floor(Math.random() * 100);
 
 function askQuestion() {
@@ -190,27 +188,30 @@ function askQuestion() {
             rl.close();
         } else if (nbr > randomNumber) {
             console.log('Trop haut !');
-            askQuestion(); // Posez à nouveau la question
+            askQuestion(); 
         } else if (nbr < randomNumber) {
             console.log('Trop bas !');
-            askQuestion(); // Posez à nouveau la question
+            askQuestion();
         }
     });
 }
 
 askQuestion();
-
-
-
-
-
+*/
 
 
 // Conversion de température :
-
 // Demandez à l'utilisateur une température en Celsius.
 // Convertissez cette température en Fahrenheit et affichez-la.
-// Tri de nombres :
 
+rl.question("Donnez-moi une température : ", (temp) => {
+
+    console.log(`La température est de ${(temp * (9/5)) + 32} Fahrenheit`)
+    rl.close();
+})
+
+
+
+// Tri de nombres :
 // Demandez à l'utilisateur de saisir une série de nombres (par exemple, séparés par des virgules).
 // Triez ces nombres et affichez-les dans l'ordre croissant.
