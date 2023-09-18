@@ -60,27 +60,52 @@ Demandez à l'utilisateur un nombre et déterminez si ce nombre est premier ou n
 /*Somme des chiffres :
 Demandez à l'utilisateur un nombre et calculez la somme de ses chiffres.*/
 
-rl.question('Donnez moi un nombre ( pas un chiffre) : ', (nbr) => {
+// rl.question('Donnez moi un nombre ( pas un chiffre) : ', (nbr) => {
 
-    let res = 0;
-    let splitNbr = nbr.split('');
+//     let res = 0;
+//     let splitNbr = nbr.split('');
     
-    for(let i = 0; i < splitNbr.length ; i++){
-        res += parseInt(splitNbr[i]);
-    }
+//     for(let i = 0; i < splitNbr.length ; i++){
+//         res += parseInt(splitNbr[i]);
+//     }
 
-    console.log(res);
+//     console.log(res);
 
 
-    rl.close();
+//     rl.close();
 
-})
+// })
 
 
 /*Fibonacci :
-Demandez à l'utilisateur un nombre n et affichez le n-ième nombre de la séquence de Fibonacci.
+Demandez à l'utilisateur un nombre n et affichez le n-ième nombre de la séquence de Fibonacci.*/
 
-Durée entre deux dates :
+rl.question("Suite de fibonacci, donnez moi un nombre :", (nbr) => {
+    nbr = parseInt(nbr);
+
+    if (!isNaN(nbr) && nbr >= 0) {
+        let a = 0, b = 1;
+
+        if (nbr === 0) {
+            console.log(a);
+        } else if (nbr === 1) {
+            console.log(b);
+        } else {
+            for (let i = 2; i <= nbr; i++) {
+                let temp = a + b;
+                a = b;
+                b = temp;
+            }
+            console.log(b);
+        }
+    } else {
+        console.log("Veuillez entrer un nombre valide.");
+    }
+    rl.close();
+});
+
+
+/*Durée entre deux dates :
 Demandez à l'utilisateur deux dates (format JJ/MM/AAAA) et calculez la différence en jours entre ces deux dates.
 
 Mots les plus fréquents :
