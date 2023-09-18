@@ -22,21 +22,42 @@ Demandez à l'utilisateur un nombre et calculez la factorielle de ce nombre.*/
 /*Inverse d'une chaîne :
 Demandez à l'utilisateur une chaîne et renvoyez cette chaîne inversée.*/
 
-rl.question(' Donne moi un phrase : ', (phrase) => {
+// rl.question(' Donne moi un phrase : ', (phrase) => {
 
-    let ph = phrase.split(' ');
-    let reverse  = ph.reverse().join(' ');
+//     let ph = phrase.split(' ');
+//     let reverse  = ph.reverse().join(' ');
 
-    console.log(reverse);
-    rl.close();
+//     console.log(reverse);
+//     rl.close();
 
-})
+// })
 
 
 /*Nombre premier :
-Demandez à l'utilisateur un nombre et déterminez si ce nombre est premier ou non.
+Demandez à l'utilisateur un nombre et déterminez si ce nombre est premier ou non.*/
 
-Somme des chiffres :
+rl.question('Donnez moi un chiffre : ', (nbr) => {
+
+    let estPremier = true;
+
+    for(let i = 2 ; i < nbr ; i++){
+        if(nbr % i === 0){
+            estPremier = false;
+            break;
+        }
+    }
+
+    if(estPremier){
+        console.log("Ce chiffre est un nombre premier")
+    }else{
+        console.log("Ce n'est pas un nombre premier")
+    }
+    
+    rl.close();
+})
+
+
+/*Somme des chiffres :
 Demandez à l'utilisateur un nombre et calculez la somme de ses chiffres.
 
 Fibonacci :
