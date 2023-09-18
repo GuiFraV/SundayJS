@@ -62,8 +62,16 @@ Demandez à l'utilisateur un nombre et calculez la somme de ses chiffres.*/
 
 rl.question('Donnez moi un nombre ( pas un chiffre) : ', (nbr) => {
 
+    let res = 0;
     let splitNbr = nbr.split('');
-    console.log(splitNbr)
+    
+    for(let i = 0; i < splitNbr.length ; i++){
+        res += parseInt(splitNbr[i]);
+    }
+
+    console.log(res);
+
+
     rl.close();
 
 })
