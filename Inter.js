@@ -80,29 +80,29 @@ Demandez à l'utilisateur un nombre et calculez la somme de ses chiffres.*/
 /*Fibonacci :
 Demandez à l'utilisateur un nombre n et affichez le n-ième nombre de la séquence de Fibonacci.*/
 
-rl.question("Suite de fibonacci, donnez moi un nombre :", (nbr) => {
-    nbr = parseInt(nbr);
+// rl.question("Suite de fibonacci, donnez moi un nombre :", (nbr) => {
+//     nbr = parseInt(nbr);
 
-    if (!isNaN(nbr) && nbr >= 0) {
-        let a = 0, b = 1;
+//     if (!isNaN(nbr) && nbr >= 0) {
+//         let a = 0, b = 1;
 
-        if (nbr === 0) {
-            console.log(a);
-        } else if (nbr === 1) {
-            console.log(b);
-        } else {
-            for (let i = 2; i <= nbr; i++) {
-                let temp = a + b;
-                a = b;
-                b = temp;
-            }
-            console.log(b);
-        }
-    } else {
-        console.log("Veuillez entrer un nombre valide.");
-    }
-    rl.close();
-});
+//         if (nbr === 0) {
+//             console.log(a);
+//         } else if (nbr === 1) {
+//             console.log(b);
+//         } else {
+//             for (let i = 2; i <= nbr; i++) {
+//                 let temp = a + b;
+//                 a = b;
+//                 b = temp;
+//             }
+//             console.log(b);
+//         }
+//     } else {
+//         console.log("Veuillez entrer un nombre valide.");
+//     }
+//     rl.close();
+// });
 
 
 /*Durée entre deux dates :
@@ -120,3 +120,41 @@ Demandez à l'utilisateur une durée en minutes et convertissez-la en heures et 
 Calcul de la moyenne :
 Demandez à l'utilisateur une série de nombres (par exemple, séparés par des virgules) et calculez la moyenne de ces nombres.
 */
+
+
+
+
+
+// function isPrime(nbr) {
+//     if (nbr <= 1) {
+//         return false; // 0 et 1 ne sont pas des nombres premiers
+//     }
+//     for (let i = 2; i < nbr; i++) {
+//         if (nbr % i === 0) {
+//             return false; // Si nbr est divisible par un nombre entre 2 et nbr-1, alors il n'est pas premier
+//         }
+//     }
+//     return true; // Si la boucle se termine sans trouver de diviseur, alors nbr est premier
+// }
+
+
+// function isPrime(nbr) {
+//     if (nbr <= 1) {
+//         return false; // 0 et 1 ne sont pas des nombres premiers
+//     }
+//     if (nbr <= 3) {
+//         return true; // 2 et 3 sont des nombres premiers
+//     }
+//     if (nbr % 2 === 0 || nbr % 3 === 0) {
+//         return false; // Élimine les multiples de 2 et 3
+//     }
+
+//     let i = 5;
+//     while (i * i <= nbr) {
+//         if (nbr % i === 0 || nbr % (i + 2) === 0) {
+//             return false; // Élimine les multiples de 5 et 7
+//         }
+//         i += 6; // Avance de 6 car nous avons déjà éliminé les multiples de 2 et 3
+//     }
+//     return true;
+// }
