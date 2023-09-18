@@ -36,31 +36,40 @@ Demandez à l'utilisateur une chaîne et renvoyez cette chaîne inversée.*/
 /*Nombre premier :
 Demandez à l'utilisateur un nombre et déterminez si ce nombre est premier ou non.*/
 
-rl.question('Donnez moi un chiffre : ', (nbr) => {
+// rl.question('Donnez moi un chiffre : ', (nbr) => {
 
-    let estPremier = true;
+//     let estPremier = true;
 
-    for(let i = 2 ; i < nbr ; i++){
-        if(nbr % i === 0){
-            estPremier = false;
-            break;
-        }
-    }
+//     for(let i = 2 ; i < nbr ; i++){
+//         if(nbr % i === 0){
+//             estPremier = false;
+//             break;
+//         }
+//     }
 
-    if(estPremier){
-        console.log("Ce chiffre est un nombre premier")
-    }else{
-        console.log("Ce n'est pas un nombre premier")
-    }
-    
-    rl.close();
-})
+//     if(estPremier){
+//         console.log("Ce chiffre est un nombre premier")
+//     }else{
+//         console.log("Ce n'est pas un nombre premier")
+//     }
+
+//     rl.close();
+// })
 
 
 /*Somme des chiffres :
-Demandez à l'utilisateur un nombre et calculez la somme de ses chiffres.
+Demandez à l'utilisateur un nombre et calculez la somme de ses chiffres.*/
 
-Fibonacci :
+rl.question('Donnez moi un nombre ( pas un chiffre) : ', (nbr) => {
+
+    let splitNbr = nbr.split('');
+    console.log(splitNbr)
+    rl.close();
+
+})
+
+
+/*Fibonacci :
 Demandez à l'utilisateur un nombre n et affichez le n-ième nombre de la séquence de Fibonacci.
 
 Durée entre deux dates :
