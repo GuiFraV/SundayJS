@@ -4,25 +4,36 @@ const rl = readline.createInterface(process.stdin, process.stdout)
 /*Calcul de la factorielle :
 Demandez à l'utilisateur un nombre et calculez la factorielle de ce nombre.*/
 
-rl.question('Donnez moi un nombre, pour calculer sa factorielle : ', (nbr) => {
+// rl.question('Donnez moi un nombre, pour calculer sa factorielle : ', (nbr) => {
 
-    let result = nbr;
+//     let result = nbr;
 
-    for(let i = nbr -1 ; i >= 1; i--){
-        result *= i
-    }
+//     for(let i = nbr -1 ; i >= 1; i--){
+//         result *= i
+//     }
 
-    console.log(result);
+//     console.log(result);
+//     rl.close();
+
+// })
+
+
+
+/*Inverse d'une chaîne :
+Demandez à l'utilisateur une chaîne et renvoyez cette chaîne inversée.*/
+
+rl.question(' Donne moi un phrase : ', (phrase) => {
+
+    let ph = phrase.split(' ');
+    let reverse  = ph.reverse().join(' ');
+
+    console.log(reverse);
     rl.close();
 
 })
 
 
-
-/*Inverse d'une chaîne :
-Demandez à l'utilisateur une chaîne et renvoyez cette chaîne inversée.
-
-Nombre premier :
+/*Nombre premier :
 Demandez à l'utilisateur un nombre et déterminez si ce nombre est premier ou non.
 
 Somme des chiffres :
