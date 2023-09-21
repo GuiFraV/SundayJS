@@ -6,10 +6,10 @@ function Fibonacci(nbr){
         return nbr 
     }
 
-    let a = 1;
-    let b = 0;
+    let a = 0;
+    let b = 1;
  
-    for(let i = 2 ; i < nbr ; i++ ){
+    for(let i = 2 ; i <= nbr ; i++ ){
 
         let temp = a + b
         a = b
@@ -19,9 +19,9 @@ function Fibonacci(nbr){
 
     }
 
-    return b
+    return b;
 
 
 }
 
-console.log(Fibonacci(5))
+console.log(Fibonacci(8))
