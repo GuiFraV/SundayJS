@@ -15,4 +15,36 @@ const max = num.reduce((max, currentValue) => {
     return (currentValue > max) ? currentValue : max
 })
 
-console.log(max)
+// max        currentValue       return
+//  87             64              87
+//  87             96              96
+//  96             92              96
+
+
+const vote = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y']
+// const result = vote.reduce((compteur, val) => {
+
+//     if(compteur[val]){
+
+//         compteur[val]++
+
+//     }else{
+
+//         compteur[val] = 1
+
+//     }
+
+//     return compteur;
+
+
+// }, {});
+
+const result = vote.reduce((compteur, val) => {
+    compteur[val] = (compteur[val] || 0) + 1;
+    return compteur;
+}, {});
+
+console.log(result); // { y: 7, n: 6 }
+
+
+
