@@ -328,7 +328,6 @@
 // console.log(isPrime(6))
 
 
-// // 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, et 97
 
 // function Fib(nbr){
 
@@ -369,4 +368,52 @@
 // }
 
 // console.log(max(num))
+
+// 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, et 97
+
+
+// function isP(nbr){
+
+//     if(nbr <= 1){
+//         return false;
+//     }
+
+//     for(let i = 2; i< nbr ; i++ ){
+//         if(nbr % i === 0){
+//             return false;
+//         }
+//     }
+
+
+//     return true;
+
+    // if(nbr <= 3){
+    //     return true;
+    // }
+
+    // if(nbr % 2 === 0 || nbr % 3 === 0){
+    //     return false;
+    // }
+
+    // let i = 5;
+    // while(i * i <= nbr){
+
+    //     if(nbr % i === 0 || nbr % (i+2) === 0){
+    //         return false;
+    //     }
+    //     i += 6
+
+    // }
+
+    // return true;
+
+
+// }
+
+// console.log(isP(14))
+// console.log(isP(15))
+// console.log(isP(16))
+// console.log(isP(17))
+
+
 
