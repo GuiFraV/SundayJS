@@ -285,3 +285,88 @@
 // }
 
 // console.log(Fibo(9))
+
+
+// const num = [ 5, 10, 1, 6, 99, 22, 3, 2, 51, 98]
+
+// const x = num.reduce((acc, current) => {
+//     return acc + current;
+// })
+
+// console.log(x);
+
+// 2, 3, 5, 7, 11, 13, 17, 19
+
+// function isPrime(nbr){
+
+//     if(nbr <= 1){
+//         return false;
+//     }
+
+//     if(nbr <= 3){
+//         return true;
+//     }
+
+//     if(nbr % 2 === 0 || nbr % 3 === 0){
+//         return false;
+//     }
+
+//     let i = 5;
+//     while(i * i <= nbr){
+
+//         if(nbr % i === 0 || nbr % (i + 2) === 0){
+//             return false;
+//         }
+//         i += 6
+
+//     }
+
+//     return true;
+
+// }
+
+// console.log(isPrime(6))
+
+
+// // 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, et 97
+
+// function Fib(nbr){
+
+//     if(nbr <= 1){
+//         return nbr;
+//     }
+
+//     let a = 0;
+//     let b = 1;
+
+//     for(let i = 2; i <= nbr; i++ ){
+
+//         let temp = a + b;
+//         a = b;
+//         b = temp
+
+
+//     }
+
+//     return b;
+
+// }
+
+// console.log(Fib(10))
+
+// const num = [ 87, 64, 96, 92, 88, 99, 73]
+
+// function max(nbr){
+
+//     // console.log(nbr)
+
+//     return nbr.reduce((a, b) => {
+        
+//         return (b > a) ? b : a;
+
+//     })
+
+// }
+
+// console.log(max(num))
+
