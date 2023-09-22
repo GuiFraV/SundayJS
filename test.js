@@ -416,4 +416,46 @@
 // console.log(isP(17))
 
 
+// const vote = ['y','y','n','y','y','n','y','y','n','n','n','n','y']
+// const x = vote.reduce((compteur, current) => {
+
+//     if(compteur[current]){
+
+//         compteur[current]++
+
+//     }else{
+
+//         compteur[current] = 1;
+//     }
+
+//     return compteur;
+
+
+// }, {})
+
+// console.log(x);
+
+// function F(nbr){
+
+//     if(nbr <= 1){
+//         return nbr;
+//     }
+
+//     let a = 0;
+//     let b = 1;
+
+//     for(let i = 2; i< nbr; i++){
+
+//         let temp = a + b;
+//         a = b;
+//         b = temp;
+
+//     }
+
+//     return b;
+
+
+// }
+
+// console.log(F(8))
 
