@@ -52,11 +52,36 @@
 
 // console.log(x);
 
-const num = [ 87, 64, 96, 92, 88, 99, 73]
-const r = num.reduce((acc, curr) => {
+// const num = [ 87, 64, 96, 92, 88, 99, 73]
+// const r = num.reduce((acc, curr) => {
 
-    return (curr < acc) ? curr : acc; 
+//     return (curr < acc) ? curr : acc; 
 
-})
+// })
 
-console.log(r)
+// console.log(r)
+
+function palindrome(mot){
+
+    let estUnPalindrome = true;
+
+    for(let i = 0; i <= mot.length; i++){
+
+        if(mot[i] !== mot[mot.length -1 - i]){
+            return false;
+            break;
+        }
+
+
+    }
+
+    if(estUnPalindrome){
+        console.log('true')
+    }else{
+        console.log('false')
+    }
+
+
+}
+
+console.log(palindrome('kayakzedfzerfzefzefes'))
