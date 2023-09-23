@@ -197,3 +197,10 @@
 // }
 
 // console.log(fib(8))
+
+const num = [ 5, 10, 1, 6, 99, 22, 3, 2, 51, 98]
+const x = num.reduce((a, b) => {
+    return a + b
+})
+
+console.log(x)
