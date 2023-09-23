@@ -168,9 +168,32 @@
 
 // console.log(r);
 
-const num = [ 5, 10, 1, 6, 99, 22, 3, 2, 51, 98]
-const r = num.sort((a, b) => {
-    return a - b;
-})
+// const num = [ 5, 10, 1, 6, 99, 22, 3, 2, 51, 98]
+// const r = num.sort((a, b) => {
+//     return a - b;
+// })
 
-console.log(r)
+// console.log(r)
+
+// const fib = (nbr) => {
+
+//     if(nbr <= 1){
+//         return nbr
+//     }
+
+//     let a = 0;
+//     let b = 1;
+//     for(let i = 2; i<nbr ; i++){
+
+//         let res = a + b;
+//         a = b;
+//         b = res;
+
+
+//     }
+
+//     return b;
+
+// }
+
+// console.log(fib(8))
