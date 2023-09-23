@@ -459,11 +459,12 @@
 
 // console.log(F(8))
 
-const num = [ 87, 64, 96, 92, 88, 99, 73]
-const x = num.reduce((acc, curr) => {
+// const num = [ 87, 64, 96, 92, 88, 99, 73]
+// const x = num.reduce((acc, curr) => {
     
-    return (curr > acc ) ? curr : acc;
+//     return (curr < acc ) ? curr : acc;
 
-})
+// })
 
-console.log(x)
+// console.log(x)
+
