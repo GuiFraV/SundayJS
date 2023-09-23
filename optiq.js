@@ -61,27 +61,54 @@
 
 // console.log(r)
 
-function palindrome(mot){
+// function palindrome(mot){
 
-    let estUnPalindrome = true;
+//     let estUnPalindrome = true;
 
-    for(let i = 0; i <= mot.length; i++){
+//     for(let i = 0; i <= mot.length; i++){
 
-        if(mot[i] !== mot[mot.length -1 - i]){
-            return false;
-            break;
-        }
+//         if(mot[i] !== mot[mot.length -1 - i]){
+//             return false;
+//             break;
+//         }
 
+
+//     }
+
+//     if(estUnPalindrome){
+//         console.log('true')
+//     }else{
+//         console.log('false')
+//     }
+
+
+// }
+
+// console.log(palindrome('kayakzedfzerfzefzefes'))
+
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+
+const fib = (nbr) => {
+
+
+    if(nbr <= 1){
+        return nbr;
+    }
+
+    let a = 0;
+    let b = 1;
+
+    for(let i = 2; i < nbr; i++){
+
+        let res = a + b;
+        a = b;
+        b = res;
 
     }
 
-    if(estUnPalindrome){
-        console.log('true')
-    }else{
-        console.log('false')
-    }
+    return b;
 
 
 }
 
-console.log(palindrome('kayakzedfzerfzefzefes'))
+console.log(fib(8))
