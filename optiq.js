@@ -55,7 +55,7 @@
 const num = [ 87, 64, 96, 92, 88, 99, 73]
 const r = num.reduce((acc, curr) => {
 
-    return (curr > acc) ? curr : acc; 
+    return (curr < acc) ? curr : acc; 
 
 })
 
