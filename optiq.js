@@ -38,16 +38,25 @@
 // console.log(isPrime(4))
 
 
-const vote = ['y','y','y','n','y','y','y','n','y','y','y','n','n',,'n','n',,'n','n','n','n']
-const x = vote.reduce((compteur, currentValue) => {
+// const vote = ['y','y','y','n','y','y','y','n','y','y','y','n','n',,'n','n',,'n','n','n','n']
+// const x = vote.reduce((compteur, currentValue) => {
 
-    if(compteur[currentValue]){
-        compteur[currentValue]++
-    }else{
-        compteur[currentValue] = 1
-    }
+//     if(compteur[currentValue]){
+//         compteur[currentValue]++
+//     }else{
+//         compteur[currentValue] = 1
+//     }
 
-    return compteur
-}, {})
+//     return compteur
+// }, {})
 
-console.log(x);
+// console.log(x);
+
+const num = [ 87, 64, 96, 92, 88, 99, 73]
+const r = num.reduce((acc, curr) => {
+
+    return (curr > acc) ? curr : acc; 
+
+})
+
+console.log(r)
