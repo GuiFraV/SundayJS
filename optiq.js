@@ -88,27 +88,82 @@
 
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 
-const fib = (nbr) => {
+// const fib = (nbr) => {
 
 
-    if(nbr <= 1){
-        return nbr;
+//     if(nbr <= 1){
+//         return nbr;
+//     }
+
+//     let a = 0;
+//     let b = 1;
+
+//     for(let i = 2; i < nbr; i++){
+
+//         let res = a + b;
+//         a = b;
+//         b = res;
+
+//     }
+
+//     return b;
+
+
+// }
+
+// console.log(fib(8))
+
+// 2, 3, 5, 7, 11, 13, 17, 19
+
+// const isPrime = (nbr) => {
+
+
+//     if(nbr <= 1){
+//         return false;
+//     }
+
+//     if(nbr <= 3){
+//         return true;
+//     }
+
+//     if(nbr % 2 === 0 || nbr % 3 === 0){
+
+//         return false;
+
+//     }
+
+//     let i = 5;
+//     while(i * i <= nbr){
+
+//         if(nbr % i === 0 || nbr % (i + 7) === 0){
+//             return false;
+//         }
+//         i += 6;
+
+//     }
+
+//     return true;
+
+
+// }
+
+// console.log(isPrime(5))
+// console.log(isPrime(7))
+// console.log(isPrime(11))
+// console.log(isPrime(4))
+
+const vote = ['y','y','y','n','y','y','y','n','y','y','y','n','n',,'n','n',,'n','n','n','n']
+const r = vote.reduce((compteur, valeur) => {
+
+    if(compteur[valeur]){
+        compteur[valeur]++
+    }else{
+        compteur[valeur] = 1
     }
 
-    let a = 0;
-    let b = 1;
-
-    for(let i = 2; i < nbr; i++){
-
-        let res = a + b;
-        a = b;
-        b = res;
-
-    }
-
-    return b;
+    return compteur;
 
 
-}
+}, {})
 
-console.log(fib(8))
+console.log(r);
