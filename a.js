@@ -36,16 +36,49 @@
 
 // }
 
-// console.log(isPrime(2))
-// console.log(isPrime(3))
-// console.log(isPrime(4))
-
-const num = [ 87, 64, 96, 92, 88, 99, 73]
-const max = num.reduce((acc, curr)=> {
-
-    return (curr < acc) ? curr : acc;
 
 
-})
+// const num = [ 87, 64, 96, 92, 88, 99, 73]
+// const max = num.reduce((acc, curr)=> {
 
-console.log(max)
+//     return (curr < acc) ? curr : acc;
+
+
+// })
+
+// console.log(max)
+
+// 2, 3, 5, 7, 11, 13, 17, 19
+const isPrime = (nbr) => {
+
+    if(nbr <= 1){
+        return false;
+    }
+
+    if(nbr <= 3){
+        return true;
+    }
+
+    if(nbr % 2 === 0 || nbr % 3 === 0){
+        return false;
+    }
+
+    let i = 5;
+    while(i * i <= nbr){
+
+        if(nbr % i === 0 || nbr % (i+7) ===0){
+            return false;
+        }
+
+        i += 6;
+
+
+    }
+
+    return true;
+
+}
+
+console.log(isPrime(2))
+console.log(isPrime(3))
+console.log(isPrime(4))
