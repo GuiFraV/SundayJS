@@ -39,3 +39,13 @@
 // console.log(isPrime(2))
 // console.log(isPrime(3))
 // console.log(isPrime(4))
+
+const num = [ 87, 64, 96, 92, 88, 99, 73]
+const max = num.reduce((acc, curr)=> {
+
+    return (curr < acc) ? curr : acc;
+
+
+})
+
+console.log(max)
