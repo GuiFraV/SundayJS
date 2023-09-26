@@ -31,4 +31,25 @@ const fib = (nbr) => {
 
 }
 
-console.log(fib(7))
+// console.log(fib(7))
+
+const palin = (mot) =>{
+
+    let estUnP = true;
+
+    for(let i = 0; i <= mot.length ; i++){
+        if(mot[i] !== mot[mot.length -1 -i]){
+            return false;
+        }
+    }
+
+    if(estUnP){
+        console.log('true')
+    }else{
+        console.log('false')
+    }
+
+
+}
+
+console.log(palin('kayak'))
