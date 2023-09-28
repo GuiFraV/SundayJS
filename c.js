@@ -99,3 +99,12 @@
 // })
 
 // newBook = [...books, newBookToAdd]
+
+async function getTodos(){
+    const api = await fetch('url')
+    const res = await api.json()
+
+    console.log(res)
+    return res;
+
+}
