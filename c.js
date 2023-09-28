@@ -53,11 +53,22 @@
 // console.log(isPrime(8))
 // console.log(isPrime(11))
 
-const num = [ 87, 64, 96, 92, 88, 99, 73]
-const x = num.reduce((acc, curr) => {
+// const num = [ 87, 64, 96, 92, 88, 99, 73]
+// const x = num.reduce((acc, curr) => {
     
-    return (curr > acc) ? curr : acc;
+//     return (curr > acc) ? curr : acc;
 
-})
+// })
 
-console.log(x)
+// console.log(x)
+
+
+// function SkillList() {
+//     return (
+//       <div className="skill-list">
+//             {skills.map((skill) => {
+//                 <Skill name={skill.skill} level={skill.level} />
+//             })}
+//       </div>
+//     );
+//   }
