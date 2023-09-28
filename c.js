@@ -72,3 +72,28 @@
 //       </div>
 //     );
 //   }
+
+// fetch(url)
+//     .then((data) => data.json())
+//     .then((res) => console.log(res))
+
+// async function Api(){
+
+//     const url = await fetch(url)
+//     const data = await url.json();
+    
+//     console.log(data)
+
+
+// }
+
+// booksAferDelete.map((book) => {
+
+//     return (book.id === 1) ? {...book, pages:1210} : book
+
+
+// })
+
+// booksAfterDelete.filter((b) => {
+//     return (b.id !== 3) ?? b
+// })
