@@ -98,3 +98,4 @@
 //     return (b.id !== 3) ?? b
 // })
 
+// newBook = [...books, newBookToAdd]
