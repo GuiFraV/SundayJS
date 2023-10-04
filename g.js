@@ -52,3 +52,30 @@
 // console.log(isPrime(16))
 // console.log(isPrime(17))
 // console.log(isPrime(18))
+
+const palindrome = (mot) => {
+
+    let isPalindrome = true
+
+    for(let i = 0; i<mot.length; i++){
+
+        if(mot[i] !== mot[mot.length -1 -i]){
+            isPalindrome = false;
+            break;
+        }
+
+
+    }
+
+    if(isPalindrome){
+        console.log('true')
+    }else{
+        console.log('false')
+    }
+
+}
+
+
+console.log(palindrome('kayak'))
+console.log(palindrome('radar'))
+console.log(palindrome('zsedgfzergfezfezf'))
