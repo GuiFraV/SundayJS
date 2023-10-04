@@ -82,18 +82,41 @@
 
 
 
-const vote = ['y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','n','n','n','n','n','n','n','n','n','n', 'y']
+// const vote = ['y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','n','n','n','n','n','n','n','n','n','n', 'y']
 
-const x = vote.reduce((acc, curr) => {
+// const x = vote.reduce((acc, curr) => {
 
-    if(acc[curr]){
-        acc[curr]++
-    }else{
-        acc[curr]= 1;
+//     if(acc[curr]){
+//         acc[curr]++
+//     }else{
+//         acc[curr]= 1;
+//     }
+
+//     return acc;
+
+// },{})
+
+// console.log(x)
+
+const isPrime = (nbr) => {
+
+    if(nbr <= 1){
+        return false;
     }
 
-    return acc;
+    for(let i = 0; i< nbr; i++){
 
-},{})
+        if(nbr % i ===0){
+            return false;
+        }
 
-console.log(x)
+        return true;
+
+
+    }
+
+}
+
+console.log(isPrime(1))
+console.log(isPrime(2))
+console.log(isPrime(3))
