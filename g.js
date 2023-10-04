@@ -53,29 +53,47 @@
 // console.log(isPrime(17))
 // console.log(isPrime(18))
 
-const palindrome = (mot) => {
+// const palindrome = (mot) => {
 
-    let isPalindrome = true
+//     let isPalindrome = true
 
-    for(let i = 0; i<mot.length; i++){
+//     for(let i = 0; i<mot.length; i++){
 
-        if(mot[i] !== mot[mot.length -1 -i]){
-            isPalindrome = false;
-            break;
-        }
+//         if(mot[i] !== mot[mot.length -1 -i]){
+//             isPalindrome = false;
+//             break;
+//         }
 
 
-    }
+//     }
 
-    if(isPalindrome){
-        console.log('true')
+//     if(isPalindrome){
+//         console.log('true')
+//     }else{
+//         console.log('false')
+//     }
+
+// }
+
+
+// console.log(palindrome('kayak'))
+// console.log(palindrome('radar'))
+// console.log(palindrome('zsedgfzergfezfezf'))
+
+
+
+const vote = ['y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','y','y','n','n','n','n','n','n','n','n','n','n','n','n', 'y']
+
+const x = vote.reduce((acc, curr) => {
+
+    if(acc[curr]){
+        acc[curr]++
     }else{
-        console.log('false')
+        acc[curr]= 1;
     }
 
-}
+    return acc;
 
+},{})
 
-console.log(palindrome('kayak'))
-console.log(palindrome('radar'))
-console.log(palindrome('zsedgfzergfezfezf'))
+console.log(x)
