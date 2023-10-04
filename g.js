@@ -98,25 +98,36 @@
 
 // console.log(x)
 
-const isPrime = (nbr) => {
+// const isPrime = (nbr) => {
 
-    if(nbr <= 1){
-        return false;
-    }
+//     if(nbr <= 1){
+//         return false;
+//     }
 
-    for(let i = 0; i< nbr; i++){
+//     for(let i = 0; i< nbr; i++){
 
-        if(nbr % i ===0){
-            return false;
-        }
+//         if(nbr % i ===0){
+//             return false;
+//         }
 
-        return true;
+//         return true;
 
 
-    }
+//     }
 
-}
+// }
 
-console.log(isPrime(1))
-console.log(isPrime(2))
-console.log(isPrime(3))
+// console.log(isPrime(1))
+// console.log(isPrime(2))
+// console.log(isPrime(3))
+
+// const num = [ 87, 64, 96, 92, 88, 99, 73]
+// const x = num.reduce((a,b) => {
+//     if(a > b){
+//         return a
+//     }else{
+//         return b
+//     }
+// })
+
+console.log(x)
