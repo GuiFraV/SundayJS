@@ -138,28 +138,55 @@ sequence = [1, 6, -1, 10]
 
 const validateSubsequence = (arr, seq) => {
 
-    let res = [];
+    let arrIdx = 0;
+    let seqIdx = 0;
 
-    for(let i = 0; i < arr.length ; i++){
-        for(let y= 0; y < seq.length; y++){
+    while(arrIdx < arr.length && seqIdx < seq.length){
 
-            if(arr[i] === seq[y] ){
+        if(arr[arrIdx] === seq[seqIdx]){
 
-                res.push(arr[i]);
+            seqIdx++
 
-            }
+        }else{
+
+            arrIdx++
+
         }
+
+
     }
 
-
-    console.log(res);
-    console.log(seq);
-
-    if(res.toString() === seq.toString()){
+    if(seqIdx === seq.length){
         console.log('true')
     }else{
         console.log('false')
     }
+
+
+
+
+    // let res = [];
+
+    // for(let i = 0; i < arr.length ; i++){
+    //     for(let y= 0; y < seq.length; y++){
+
+    //         if(arr[i] === seq[y] ){
+
+    //             res.push(arr[i]);
+
+    //         }
+    //     }
+    // }
+
+
+    // console.log(res);
+    // console.log(seq);
+
+    // if(res.toString() === seq.toString()){
+    //     console.log('true')
+    // }else{
+    //     console.log('false')
+    // }
 
 
 }
