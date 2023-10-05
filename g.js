@@ -130,4 +130,38 @@
 //     }
 // })
 
-console.log(x)
+// console.log(x)
+
+array = [5, 1, 22, 25, 6, -1, 8, 10]
+sequence = [1, 6, -1, 10]
+// sequence = [1, 5, -1, 10]
+
+const validateSubsequence = (arr, seq) => {
+
+    let res = [];
+
+    for(let i = 0; i < arr.length ; i++){
+        for(let y= 0; y < seq.length; y++){
+
+            if(arr[i] === seq[y] ){
+
+                res.push(arr[i]);
+
+            }
+        }
+    }
+
+
+    console.log(res);
+    console.log(seq);
+
+    if(res.toString() === seq.toString()){
+        console.log('true')
+    }else{
+        console.log('false')
+    }
+
+
+}
+
+console.log(validateSubsequence(array, sequence))
