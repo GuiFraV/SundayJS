@@ -6,26 +6,35 @@ function isPrime(nbr){
         return false;
     }
 
-    if(nbr <= 3){
-        return true;
-    }
 
-    if(nbr % 2 === 0 || nbr % 3 === 0){
-        return false;
-    }
+    for(let i = 2; i< nbr; i++){
 
-    i = 5;
-
-    while(i * i <= nbr){
-
-        if(nbr % i === 0 || nbr % (i + 2) === 0){
-
-            return false
-
+        if(nbr % i === 0){
+            return false;
         }
-        i+= 5
 
     }
+
+    // if(nbr <= 3){
+    //     return true;
+    // }
+
+    // if(nbr % 2 === 0 || nbr % 3 === 0){
+    //     return false;
+    // }
+
+    // i = 5;
+
+    // while(i * i <= nbr){
+
+    //     if(nbr % i === 0 || nbr % (i + 2) === 0){
+
+    //         return false
+
+    //     }
+    //     i+= 5
+
+    // }
 
     return true;
 
