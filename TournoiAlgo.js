@@ -13,6 +13,7 @@ const results = [0, 0, 1]
 function winningTournoi(arr, result){
 
     let obj = {};
+    const res = [];
 
     for(let i = 0; i< arr.length; i++){
 
@@ -38,16 +39,21 @@ function winningTournoi(arr, result){
 
     }
 
-    // for (const [key, value] of Object.entries(obj)) {
-    //     console.log(`${key}: ${value}`);
-    // }
-
+    
     
     const objValues = Object.values(obj)
+    const maxObjValue = objValues.reduce((acc, curr) => {
+        return acc > curr ? acc : curr
+    })
+    
+    for (const [key, value] of Object.entries(obj)) {
+        if(maxObjValue === value){
+            res.push(key)
+        }
+    }
 
+    console.log(res.toString())
 
-    // console.log(objValues[0])
-    console.log(Object.keys(objValues))
 }
 
 console.log(winningTournoi(competitions, results))
