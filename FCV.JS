@@ -11,31 +11,31 @@ const tree = {
         {"id": "1", "left": null, "right": null, "value": 1}
     ],
         "root": "10"
+}
+
+class BST {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
     }
-    
-    class BST {
-        constructor(value) {
-            this.value = value;
-            this.left = null;
-            this.right = null;
-        }
-    }
-    
-    const target = 12
-    
-    function buildTree(jsonTree) {
-        const nodes = {};  
-        jsonTree.nodes.forEach(nodeData => {
-            nodes[nodeData.id] = new BST(nodeData.value);
-        });
-        jsonTree.nodes.forEach(nodeData => {
-            if (nodeData.left) nodes[nodeData.id].left = nodes[nodeData.left];
-            if (nodeData.right) nodes[nodeData.id].right = nodes[nodeData.right];
-        });
-        return nodes[jsonTree.root]; 
-    }
-    
-    const bstRoot = buildTree(tree);
+}
+
+const target = 12
+
+function buildTree(jsonTree) {
+    const nodes = {};  
+    jsonTree.nodes.forEach(nodeData => {
+        nodes[nodeData.id] = new BST(nodeData.value);
+    });
+    jsonTree.nodes.forEach(nodeData => {
+        if (nodeData.left) nodes[nodeData.id].left = nodes[nodeData.left];
+        if (nodeData.right) nodes[nodeData.id].right = nodes[nodeData.right];
+    });
+    return nodes[jsonTree.root]; 
+}
+
+const bstRoot = buildTree(tree);
 
 function findClosestValueInBst(tree, target){
 
@@ -43,34 +43,19 @@ function findClosestValueInBst(tree, target){
     let currentNode = tree;
 
     while(currentNode !== null){
-
         if(Math.abs(target - closest) > Math.abs(target - currentNode.value)){
-
             closest = currentNode.value;
-
         }
 
         if(target < currentNode.value){
-
             currentNode = currentNode.left
-
-
         }else if( target > currentNode.value){
-
             currentNode = currentNode.right
-
         }else{
             break;
         }
-
-    
-
-
     }
-
     return closest
-
-
 }
 
 console.log(findClosestValueInBst(bstRoot, target))
