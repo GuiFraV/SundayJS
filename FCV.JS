@@ -39,28 +39,37 @@ const tree = {
 
 function findClosestValueInBst(tree, target){
 
-    // let closest = Infinity;
+    let closest = Infinity;
+    let currentNode = tree;
 
-    // let currentNode = tree;
+    while(currentNode !== null){
 
-    // while(currentNode !== null){
+        if(Math.abs(target - closest) > Math.abs(target - currentNode.value)){
 
-    //     if(Math.abs(target - closest) > Math.abs (target - currentNode.value)){
+            closest = currentNode.value;
 
-    //         closest = currentNode.value;
-    //     }
+        }
 
-    //     if(target < currentNode.value){
-    //         currentNode = currentNode.left
-    //     }else if ( target > currentNode.value){
-    //         currentNode = currentNode.right;
-    //     }else{
-    //         break;
-    //     }
+        if(target > currentNode.value){
 
-    // }
+            currentNode.value = currentNode.right
 
-    // return closest;
+
+        }else if( target < currentNode.value){
+
+            currentNode.value = currentNode.left
+
+        }else{
+            break;
+        }
+
+        
+
+
+    }
+
+    return closest
+
 
 }
 
