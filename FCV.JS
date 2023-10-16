@@ -50,20 +50,20 @@ function findClosestValueInBst(tree, target){
 
         }
 
-        if(target > currentNode.value){
+        if(target < currentNode.value){
 
-            currentNode.value = currentNode.right
+            currentNode = currentNode.left
 
 
-        }else if( target < currentNode.value){
+        }else if( target > currentNode.value){
 
-            currentNode.value = currentNode.left
+            currentNode = currentNode.right
 
         }else{
             break;
         }
 
-        
+    
 
 
     }
