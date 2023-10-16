@@ -38,9 +38,9 @@ function winningTournoi(arr, result){
 
     }
 
-    const res = Object.entries(obj).sort((a,b) => a[1] - b[1])
-
-    console.log(res)
+    const res = Object.entries(obj).sort((a,b) => b[1] - a[1])
+    let winning = res[0][0]
+    console.log(winning)
     
     
     // const objValues = Object.values(obj)
