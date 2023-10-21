@@ -89,3 +89,31 @@ function findClosest(bst, target){
 }
 
 console.log(findClosest(bstRoot, 12))
+
+
+function Closest(tree, target){
+
+
+    let closest = Infinity;
+    let currentNode = tree;
+
+    while(currentNode !== null){
+
+        if(Math.abs(target - closest) > Math.abs(target - currentNode.value)){
+            closest = currentNode.value
+        }
+        if(target > currentNode.value){
+            currentNode = currentNode.right;
+        }else if(target < currentNode.value){
+            currentNode = currentNode.left
+        }else{
+            break;
+        }
+
+    }
+
+    return closest;
+
+}
+
+console.log(Closest(bstRoot, 12))
