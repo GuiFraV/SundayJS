@@ -27,28 +27,68 @@
 
 // 2, 3, 5, 7, 11, 13, 17, 19 
 
-const isPrime = (nbr)=> {
+// const isPrime = (nbr)=> {
 
-    if(nbr <= 1){
-        return false;
-    }
+//     if(nbr <= 1){
+//         return false;
+//     }
 
-    for(let i = 2; i< nbr; i++){
+//     for(let i = 2; i< nbr; i++){
 
-        if(nbr % i === 0){
-            return false;
+//         if(nbr % i === 0){
+//             return false;
+//         }
+
+//     }
+
+//     return true;
+// }
+
+// console.log(isPrime(1))
+// console.log(isPrime(2))
+// console.log(isPrime(3))
+// console.log(isPrime(4))
+// console.log(isPrime(5))
+// console.log(isPrime(6))
+// console.log(isPrime(7))
+// console.log(isPrime(8))
+
+const competitions = [
+    ['HTML', 'C#'],
+    ['C#', 'Python'],
+    ['Python', 'HTML'],
+]
+
+const results = [0,0,1];
+
+function winningCompetition(match, res){
+
+    let obj = {};
+
+    for(let i = 0; i < res.length; i++){
+
+        let homeTeam = match[i][0]
+        let awayTeam = match[i][1]
+
+        if(res[i] === 0 ){
+            if(obj[awayTeam]){
+                obj[awayTeam] += 3
+            }else{
+                obj[awayTeam] = 3
+            }
+        }else{
+            if(obj[homeTeam]){
+                obj[homeTeam] += 3
+            }else{
+                obj[homeTeam] = 3
+            }
         }
 
     }
 
-    return true;
+    const winningTeam = Object.entries(obj).sort((a,b) => b[1] - a[1])
+    return winningTeam[0]
+
 }
 
-console.log(isPrime(1))
-console.log(isPrime(2))
-console.log(isPrime(3))
-console.log(isPrime(4))
-console.log(isPrime(5))
-console.log(isPrime(6))
-console.log(isPrime(7))
-console.log(isPrime(8))
+console.log(winningCompetition(competitions, results))
