@@ -92,3 +92,40 @@ function winningCompetition(match, res){
 }
 
 console.log(winningCompetition(competitions, results))
+
+
+const v = ['y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n','y','n','y','n','n','n','n']
+const x = (vote) => {
+
+    let obj = {}
+
+    for(let i = 0 ; i < vote.length; i++){
+
+        if(vote[i] === 'y'){
+
+            if(obj[vote[i]]){
+
+                obj[vote[i]]++ 
+
+            }else{
+
+                obj[vote[i]] = 1
+            }
+
+        }else if(vote[i] === 'n'){
+
+            if(obj[vote[i]]){
+
+                obj[vote[i]]++ 
+
+            }else{
+
+                obj[vote[i]] = 1
+            }
+        }
+    }
+
+    console.log(obj)
+}
+
+console.log(x(v))
