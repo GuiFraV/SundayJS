@@ -65,7 +65,7 @@
 
 //     console.log(cv(bstRoot, 12))
 
-const coins = [1, 2, 5]
+const coins = [5, 7, 1, 1, 2, 3, 22]
 
 const x = (arr) => {
 
@@ -75,7 +75,7 @@ const x = (arr) => {
     for(let i = 0; i < arr.length; i++){
 
 
-        if(changeMin <= coinsSort[i]){
+        if(changeMin >= coinsSort[i]){
             changeMin += coinsSort[i]
         }
     }
