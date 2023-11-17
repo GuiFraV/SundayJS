@@ -25,22 +25,65 @@
 
 // console.log(transposed(matrix));
 
-const array = [5, 1, 22, 25, 6, -1, 8, 10];
-const sequence = [1, 6, -1, 10, 11];
+// const array = [5, 1, 22, 25, 6, -1, 8, 10];
+// const sequence = [1, 6, -1, 10, 11];
 
-function validateSub(arr, seq){
+// function validateSub(arr, seq){
 
-    let arrIdx = 0;
-    let seqIdx = 0;
+//     let arrIdx = 0;
+//     let seqIdx = 0;
 
-    while(arrIdx < arr.length && seqIdx < seq.length){
-        if(arr[arrIdx] !== seq[seqIdx]){
-            arrIdx++
-        }else{
-            seqIdx++
-        }
+//     while(arrIdx < arr.length && seqIdx < seq.length){
+//         if(arr[arrIdx] !== seq[seqIdx]){
+//             arrIdx++
+//         }else{
+//             seqIdx++
+//         }
+//     }
+//     return seqIdx === seq.length;
+// }
+
+// console.log(validateSub(array, sequence))
+
+// 2, 3, 5, 7, 11, 13, 17, 19
+
+const primeNumber = (nbr) => {
+
+    if(nbr <= 1){
+        return false;
     }
-    return seqIdx === seq.length;
+
+    if(nbr <= 3){
+        return true;
+    }
+
+    if(nbr % 2 === 0 || nbr % 3 === 0){
+        return false;
+    }
+
+    let i = 5;
+
+    while( i * i <= nbr){
+        if(nbr % i === 0 || nbr % (i + 2) === 0){
+            return false;
+        }
+        i+= 6;
+    }
+    return true;
 }
 
-console.log(validateSub(array, sequence))
+console.log(primeNumber(1))
+console.log(primeNumber(2))
+console.log(primeNumber(3))
+console.log(primeNumber(4))
+console.log(primeNumber(5))
+console.log(primeNumber(6))
+console.log(primeNumber(7))
+console.log(primeNumber(8))
+console.log(primeNumber(88))
+console.log(primeNumber(99))
+console.log(primeNumber(100))
+console.log(primeNumber(12))
+console.log(primeNumber(13))
+console.log(primeNumber(14))
+console.log(primeNumber(17))
