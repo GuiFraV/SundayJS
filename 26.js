@@ -87,3 +87,35 @@ const findClosestValue = (tree, target) => {
 }
 
 console.log(findClosestValue(bstRoot, target))
+
+// 2, 3, 5, 7, 11, 13, 17, 19
+
+const primeNumber = (nbr) => {
+
+    if(nbr <= 1 ){
+        return false;
+    }
+
+    for(let i = 2 ; i < nbr; i++){
+
+        if(nbr % i === 0){
+            return false;
+        }
+
+
+    }
+
+    return true;
+
+
+}
+
+console.log(primeNumber(1))
+console.log(primeNumber(2))
+console.log(primeNumber(3))
+console.log(primeNumber(5))
+console.log(primeNumber(7))
+console.log(primeNumber(11))
+console.log(primeNumber(13))
+console.log(primeNumber(17))
+console.log(primeNumber(19))
