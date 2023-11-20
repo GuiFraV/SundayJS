@@ -35,4 +35,26 @@ console.log(fibo(21))
 console.log(fibo(34))
 console.log(fibo(10))
 
+const matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
 
+const arrayTransposed = (arr) => {
+
+    let rows = arr.length;
+    let cols = arr[0].length;
+    let transpo = [];
+
+    for(let j = 0 ; j < cols; j++){
+        transpo[j] = [];
+        for(let i = 0 ; i < rows; i++){
+            transpo[j][i] = arr[i][j]
+        }
+    }
+
+    return transpo;
+
+}
+
+console.log(arrayTransposed(matrix));
