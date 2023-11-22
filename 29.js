@@ -13,22 +13,22 @@
 
 // console.log(x)
 
-const fibo = (nbr) => {
+// const fibo = (nbr) => {
 
-    if(nbr <= 1){
-        return nbr;
-    }
+//     if(nbr <= 1){
+//         return nbr;
+//     }
 
-    return fibo(nbr - 1 ) + fibo(nbr - 2 );
+//     return fibo(nbr - 1 ) + fibo(nbr - 2 );
 
-}
+// }
 
-console.log(fibo(1))
-console.log(fibo(2))
-console.log(fibo(3))
-console.log(fibo(4))
-console.log(fibo(5))
-console.log(fibo(6))
-console.log(fibo(7))
-console.log(fibo(8))
-console.log(fibo(9))
+// console.log(fibo(1))
+// console.log(fibo(2))
+// console.log(fibo(3))
+// console.log(fibo(4))
+// console.log(fibo(5))
+// console.log(fibo(6))
+// console.log(fibo(7))
+// console.log(fibo(8))
+// console.log(fibo(9))
