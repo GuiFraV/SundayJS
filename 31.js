@@ -1,12 +1,32 @@
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...
 
+// const fibo = (nbr) => {
+
+//     if(nbr <= 1){
+//         return nbr
+//     }
+
+//     return fibo(nbr - 1) + fibo(nbr - 2) 
+
+// }
+
 const fibo = (nbr) => {
 
-    if(nbr <= 1){
-        return nbr
+    if(nbr <= 1 ){
+        return nbr;
     }
 
-    return fibo(nbr - 1) + fibo(nbr - 2) 
+    let a = 0;
+    let b = 1;
+
+    for(let i = 0; i < nbr; i++){
+
+        let res = a + b;
+        a = b;
+        b = res;
+    }
+
+    return b;
 
 }
 
