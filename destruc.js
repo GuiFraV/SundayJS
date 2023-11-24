@@ -36,6 +36,10 @@
 // Given an array [1, 2], use destructuring to create variables a, b, and c, where c should have a default value of 3.
 // Swapping Variables using Destructuring:
 
+const arr = [1, 2]
+const [a,b, c = 3] = arr
+
+
 // Given two variables a = 1 and b = 2, swap their values using array destructuring.
 // Object Destructuring:
 
