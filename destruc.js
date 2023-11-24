@@ -60,6 +60,12 @@
 // Given an object { user: { name: 'John', age: 30 } }, use destructuring to create a variable name that extracts the name from the nested user object.
 // Destructuring Function Parameters:
 
+// const obj = { user: { name: 'John', age: 30 } }
+// const {user:{name, age}} = obj
+// age
+
+
+
 // Write a function that takes an object as an argument and uses destructuring within the parameter list to extract name and age properties.
 // Destructuring with Aliases:
 
