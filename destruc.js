@@ -64,10 +64,12 @@
 // const {user:{name, age}} = obj
 // age
 
-
-
 // Write a function that takes an object as an argument and uses destructuring within the parameter list to extract name and age properties.
 // Destructuring with Aliases:
+
+// function someId({name, age}){
+//     return `${name}, ${age}`
+// }
 
 // Given an object { firstName: 'John', lastName: 'Doe' }, use destructuring to create variables name and surname which are aliases for firstName and lastName.
 // Destructuring with Rest in Object:
