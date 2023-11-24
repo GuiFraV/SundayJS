@@ -16,7 +16,12 @@
 
 const arr = [1,2,3,4,5]
 
-const [a, c ] = arr;
+const [a, ,c] = arr;
+
+
+console.log(a)
+console.log(c)
+
 
 // Given an array [1, 2, 3, 4, 5], use destructuring to create a variable first for the first element and another variable rest for the remaining array.
 // Destructuring with Default Values:
