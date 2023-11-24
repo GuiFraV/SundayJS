@@ -53,6 +53,10 @@
 // Given an object { name: 'John', age: 30 }, use destructuring to create variables name and age holding the corresponding properties.
 // Nested Object Destructuring:
 
+// const obj = { name: 'John', age: 30 }
+// const {name, age} = obj;
+
+
 // Given an object { user: { name: 'John', age: 30 } }, use destructuring to create a variable name that extracts the name from the nested user object.
 // Destructuring Function Parameters:
 
