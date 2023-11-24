@@ -77,6 +77,9 @@
 // const obj = { firstName: 'John', lastName: 'Doe' };
 // const {firstName:name, lastName:surname} = obj;
 
-
-
 // Given an object { a: 1, b: 2, c: 3, d: 4 }, use destructuring to create a variable a for the property a and another variable rest to hold the remaining properties as a new object.
+
+const obj = { a: 1, b: 2, c: 3, d: 4 }
+const {a, ...rest} = obj
+
+
