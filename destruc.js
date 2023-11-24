@@ -74,4 +74,9 @@
 // Given an object { firstName: 'John', lastName: 'Doe' }, use destructuring to create variables name and surname which are aliases for firstName and lastName.
 // Destructuring with Rest in Object:
 
+// const obj = { firstName: 'John', lastName: 'Doe' };
+// const {firstName:name, lastName:surname} = obj;
+
+
+
 // Given an object { a: 1, b: 2, c: 3, d: 4 }, use destructuring to create a variable a for the property a and another variable rest to hold the remaining properties as a new object.
