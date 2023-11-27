@@ -45,46 +45,65 @@
 // console.log(teamWinnig(competitions, results))
 
 
-const matrix = [
-    [1, 2, 3],
-    [4, 5, 6]
-]
+// const matrix = [
+//     [1, 2, 3],
+//     [4, 5, 6]
+// ]
 
-function transposeMatrix(matrix) {
-    let rows = matrix.length;
-    let cols = matrix[0].length;
-    let transposed = [];
+// function transposeMatrix(matrix) {
+//     let rows = matrix.length;
+//     let cols = matrix[0].length;
+//     let transposed = [];
 
-    for (let j = 0; j < cols; j++) {
-        transposed[j] = [];
-        for (let i = 0; i < rows; i++) {
-            transposed[j][i] = matrix[i][j];
-        }
+//     for (let j = 0; j < cols; j++) {
+//         transposed[j] = [];
+//         for (let i = 0; i < rows; i++) {
+//             transposed[j][i] = matrix[i][j];
+//         }
+//     }
+
+//     return transposed;
+// }
+
+// console.log(transposeMatrix(matrix))
+
+// const transposed = (arr) => {
+
+//     let rows = arr.length;
+//     let cols = arr[0].length;
+//     let trans = [];
+
+//     for(let j = 0; j < cols; j++){
+
+//         trans[j] = [];
+
+//         for(let i = 0; i < rows; i++){
+
+//             trans[j][i] = arr[i][j]
+
+//         }
+//     }
+
+//     return trans;
+// }
+
+// console.log(transposed(matrix))
+
+
+const fibo = (nbr) => {
+
+    if(nbr <= 1){
+        return nbr;
     }
 
-    return transposed;
+    return fibo(nbr - 1) + fibo(nbr - 2)
+
 }
 
-console.log(transposeMatrix(matrix))
-
-const transposed = (arr) => {
-
-    let rows = arr.length;
-    let cols = arr[0].length;
-    let trans = [];
-
-    for(let j = 0; j < cols; j++){
-
-        trans[j] = [];
-
-        for(let i = 0; i < rows; i++){
-
-            trans[j][i] = arr[i][j]
-
-        }
-    }
-
-    return trans;
-}
-
-console.log(transposed(matrix))
+console.log(fibo(1))
+console.log(fibo(2))
+console.log(fibo(3))
+console.log(fibo(4))
+console.log(fibo(5))
+console.log(fibo(6))
+console.log(fibo(7))
