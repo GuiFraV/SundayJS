@@ -38,10 +38,29 @@ function buildTree(jsonTree) {
 const bstRoot = buildTree(tree);
 
 
-const closestValue = () => {
-
-    
+const closestValue = (tree, target) => {
 
 
+    let closest = Infinity;
+    let currentNode = tree;
 
+    while(currentNode !== null){
+
+        if(Math.abs(target - closest) > Math.abs(target - currentNode.value)){
+            closest = currentNode.value;
+        }
+
+        if(target < currentNode.value){
+            currentNode = currentNode.left;
+        }else if (target > currentNode.value){
+            currentNode = currentNode.right;
+        }else{
+            break;
+        }
+
+    }
+
+    return closest;
 }
+
+console.log(closestValue(bstRoot, 12))
