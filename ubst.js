@@ -105,4 +105,57 @@ function numberOfSteps(list){
 }
 
 
-console.log(numberOfSteps(sortedNames));
+// console.log(numberOfSteps(sortedNames));
+
+
+
+/* Exercice : Trouver le Premier et le Dernier Index d'un Élément dans une Liste Triée
+
+Imaginez que vous avez une liste triée d'entiers, qui peut contenir plusieurs instances du même nombre. Par exemple, la liste pourrait être [1, 2, 4, 4, 4, 5, 6, 6]. Votre tâche est de trouver le premier et le dernier index d'un élément spécifique dans cette liste en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend en entrée une liste triée d'entiers et un entier cible.
+Utilisez la recherche binaire pour trouver le premier index de cet élément dans la liste. Si l'élément n'est pas présent, retournez -1.
+Utilisez la recherche binaire pour trouver le dernier index de cet élément dans la liste. Si l'élément n'est pas présent, retournez -1.
+La fonction doit retourner un objet ou un tableau contenant les deux indices. */
+
+
+function findFirstAndLastIndex(list, target) {
+    let first = findIndex(list, target, true);
+    let last = findIndex(list, target, false);
+    return [first, last];
+}
+
+function findIndex(list, target, findFirst) {
+    let low = 0;
+    let high = list.length - 1;
+    let index = -1;
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        let guess = list[mid];
+
+        console.log(`Iteration - Low: ${low}, High: ${high}, Mid: ${mid}, Guess: ${guess}`);
+
+        if (guess === target) {
+            index = mid;
+            if (findFirst) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        } else if (guess > target) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    return index;
+}
+
+// Exemple d'utilisation :
+let list = [1, 2, 4, 4, 4, 5, 6, 6];
+let target = 4;
+console.log("First and Last Index: ", findFirstAndLastIndex(list, target));
