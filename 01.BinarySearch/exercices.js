@@ -250,4 +250,78 @@ const findNumber = (arr, target) => {
     return false;
 }
 
-console.log(findNumber([2, 3, 4, 5, 5, 1, 2, 2], 3))
+// console.log(findNumber([2, 3, 4, 5, 5, 1, 2, 2], 3))
+
+
+/*
+
+Exercice : Trouver le Pic dans un Array de Montagnes
+
+Imaginez que vous avez un array d'entiers qui représente une série de montagnes. Les valeurs de l'array augmentent d'abord jusqu'à un certain point (le pic de la montagne), puis diminuent. Par exemple, l'array [1, 3, 5, 7, 8, 5, 3, 1] a un pic à l'indice 4 où la valeur est 8. Votre tâche est de trouver l'indice du pic en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend un array représentant une montagne en tant qu'entrée.
+Utilisez la recherche binaire pour trouver l'indice du pic.
+Retournez l'indice du pic.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [1, 3, 5, 7, 8, 5, 3, 1]
+Sortie : 4 (car l'élément à l'indice 4 est le pic de la montagne)
+Cet exercice est intéressant car il vous demande d'identifier un élément spécifique dans un array qui suit une certaine tendance (augmentation puis diminution). Il teste votre capacité à utiliser la recherche binaire dans un contexte légèrement différent de la recherche d'un élément spécifique ou d'un minimum/maximum dans un array trié.
+
+*/
+
+
+// const a = [1, 3, 5, 7, 8, 5, 3, 1];
+// const pic = (arr) => {
+
+//     let low = 0;
+//     let high = arr.length -1;
+
+//     while(low <= high){
+
+//         let mid = Math.floor((low + high) / 2);
+
+//         console.log(mid)
+
+//         if(arr[mid] <= arr[mid + 1]){
+//             return arr[mid + 1];
+//         }
+
+//         if(arr[low] <= arr[mid]){
+//             low = mid + 1;
+//         }else{
+//             high = mid - 1;
+//         }
+//     }
+// }
+
+// console.log(pic(a));
+// Correction : 
+
+const pic = (arr) => {
+    let low = 0;
+    let high = arr.length - 1;
+
+    while (low < high) { // Notez l'utilisation de < au lieu de <=
+        let mid = Math.floor((low + high) / 2);
+
+        if (arr[mid] < arr[mid + 1]) {
+            // Si le milieu est plus petit que son voisin droit,
+            // le pic est à droite.
+            low = mid + 1;
+        } else {
+            // Sinon, le pic est à gauche ou c'est le milieu.
+            high = mid;
+        }
+    }
+
+    // À la fin de la boucle, low et high convergent vers l'indice du pic.
+    return low; // ou return high; car low == high
+}
+
+const a = [1, 3, 5, 7, 8, 5, 3, 1];
+console.log(pic(a)); // Devrait afficher l'indice du pic, qui est 4
+
+
