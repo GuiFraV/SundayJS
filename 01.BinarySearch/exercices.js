@@ -321,7 +321,60 @@ const pic = (arr) => {
     return low; // ou return high; car low == high
 }
 
-const a = [1, 3, 5, 7, 8, 5, 3, 1];
-console.log(pic(a)); // Devrait afficher l'indice du pic, qui est 4
+// const a = [1, 3, 5, 7, 8, 5, 3, 1];
+// console.log(pic(a)); // Devrait afficher l'indice du pic, qui est 4
 
 
+/*
+
+Exercice : Trouver un Élément dans un Array Trié et Inversé
+
+Imaginez que vous avez un array d'entiers qui a été trié en ordre décroissant. Votre tâche est de trouver un élément spécifique dans cet array en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array trié en ordre décroissant et un entier cible à rechercher.
+Implémentez la recherche binaire pour trouver l'index de cet entier cible dans l'array.
+Si l'entier cible est trouvé, retournez son index. Sinon, retournez -1.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [10, 8, 6, 4, 2], cible = 6
+
+Sortie : 2 (car 6 est à l'index 2 dans l'array)
+
+Entrée : array = [10, 8, 6, 4, 2], cible = 5
+
+Sortie : -1 (car 5 n'est pas présent dans l'array)
+
+Cet exercice est intéressant car il teste votre capacité à adapter l'algorithme de recherche binaire à un array trié dans l'ordre inverse (décroissant au lieu de croissant). Cela nécessite de modifier légèrement la façon dont vous comparez les éléments de l'array pendant la recherche.
+
+*/
+
+const b = array = [10, 8, 6, 4, 2];
+
+const findElement = (arr, target) => {
+
+    let low = 0;
+    let high = arr.length -1;
+
+    while(low <= high){
+
+        let mid = Math.floor((low + high) / 2);
+
+        if(target === arr[mid]){
+            return mid;
+        }
+
+        if(target < arr[mid]){
+            low = mid + 1;
+        }else{
+            high = mid - 1 ;
+        }
+
+    }
+
+    return -1;
+
+}
+
+console.log(findElement(b, 10))
