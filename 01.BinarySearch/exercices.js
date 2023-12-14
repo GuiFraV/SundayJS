@@ -23,10 +23,9 @@ Cet exercice vous permettra de pratiquer la mise en œuvre de base de la recherc
 
 */
 
-const liste = [1, 3, 5, 7, 9, 11];
+// const liste = [1, 3, 5, 7, 9, 11];
 
 function binarySearch(olist, target){
-
 
     let low = 0;
     let high = olist.length -1;
@@ -75,7 +74,7 @@ Sortie : 3 (car l'élément à l'index 3 est 1, qui est inférieur à 6 à l'ind
 
 */
 
-const l = [4, 5, 6, 1, 2, 3]
+// const l = [4, 5, 6, 1, 2, 3]
 // const l = [1, 2, 3, 4, 5, 6]
 
 // const rotation = (liste) => {
@@ -196,5 +195,59 @@ const findMind = (liste) => {
     }
 }
 
-console.log(findMind([3, 4, 5, 6, 1, 2]))
+// console.log(findMind([3, 4, 5, 6, 1, 2]))
 
+
+/*
+
+Exercice : Trouver un Nombre dans un Array Trié par Rotation avec des Doublons
+
+Supposons que vous avez un array d'entiers qui a été trié en ordre croissant, puis roté à un certain point. Contrairement à l'exercice précédent, cette fois, l'array peut contenir des doublons. Par exemple, [2, 3, 4, 5, 5, 1, 2, 2] est une version rotée de l'array [1, 2, 2, 2, 3, 4, 5, 5]. Votre tâche est de déterminer si un nombre cible donné est présent dans l'array.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array trié puis roté et un entier cible à rechercher.
+Utilisez une adaptation de la recherche binaire pour déterminer si le nombre cible est présent dans l'array.
+Retournez true si le nombre est trouvé, sinon false.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [2, 3, 4, 5, 5, 1, 2, 2], cible = 3
+
+Sortie : true (car 3 est présent dans l'array)
+
+Entrée : array = [2, 3, 4, 5, 5, 1, 2, 2], cible = 6
+
+Sortie : false (car 6 n'est pas dans l'array)
+
+*/
+
+const findNumber = (arr, target) => {
+    let low = 0;
+    let high = arr.length - 1;
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+
+        if (target === arr[mid]) {
+            return true;
+        }
+
+        if (arr[low] <= arr[mid]) {
+            if (target >= arr[low] && target < arr[mid]) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        } else {
+            if (target > arr[mid] && target <= arr[high]) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+    }
+
+    return false;
+}
+
+console.log(findNumber([2, 3, 4, 5, 5, 1, 2, 2], 3))
