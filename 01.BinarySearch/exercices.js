@@ -119,4 +119,82 @@ const rotation = (liste) => {
     return 0;
 }
 
-console.log(rotation(l))
+// console.log(rotation(l))
+
+
+/*
+
+    Exercice : Trouver le Minimum dans une Liste Triée en Rotation
+
+    Supposons que vous avez une liste d'entiers qui a été triée en ordre croissant, puis rotée à un certain point. Par exemple, si la liste triée originale est [1, 2, 3, 4, 5] et qu'elle est rotée à partir de l'index 2, elle devient [3, 4, 5, 1, 2]. Votre tâche est de trouver le plus petit élément de cette liste en utilisant la recherche binaire.
+
+    Instructions :
+
+    Écrivez une fonction en JavaScript qui prend une liste triée en rotation en tant qu'entrée.
+    Utilisez la recherche binaire pour trouver le plus petit élément de la liste.
+    Retournez ce plus petit élément.
+    Exemple d'entrée et de sortie :
+
+    Entrée : liste = [3, 4, 5, 1, 2]
+    Sortie : 1 (car c'est le plus petit élément dans la liste)
+
+*/
+
+
+// const findMin = (liste) => {
+
+//     let low = 0;
+//     let high = liste.length -1;
+
+//     let lowMid = Math.floor((low + high) / 2);
+//     let highMid = Math.floor((low + high) / 2);
+
+//     while(low <= high){
+
+
+//         if(liste[low] <= liste[lowMid]){
+//             lowMid -= 1;
+//         }
+
+//         if(liste[highMid] >= liste[high]){
+//             highMid += 1;
+//         }
+//     }
+
+//     if(lowMid < highMid){
+//         return liste[lowMid];
+//     }else{
+//         return liste[highMid];
+//     }
+
+// }
+
+
+
+const findMind = (liste) => {
+
+
+    let low = 0;
+    let high = liste.length - 1;
+
+
+    while(low <= high){
+
+        let mid = Math.floor((low + high) / 2);
+
+
+        if(liste[mid] >= liste[mid + 1]){
+            return liste[mid+1];
+        }
+
+        if(liste[low] <= liste[mid]){
+            low = mid + 1;
+        }else{
+            high = mid - 1;
+        }
+
+    }
+}
+
+console.log(findMind([3, 4, 5, 6, 1, 2]))
+
