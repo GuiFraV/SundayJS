@@ -421,11 +421,11 @@ const closestElement = (arr, target) => {
     return arr[high]
 }
 
-const array = [1, 2, 4, 5, 6, 6, 8, 9]
+// const array = [1, 2, 4, 5, 6, 6, 8, 9]
 
-console.log(closestElement(array, 7));
+// console.log(closestElement(array, 7));
 
-const closestElement = (arr, target) => {
+const closesstElement = (arr, target) => {
     let low = 0;
     let high = arr.length - 1;
 
@@ -455,4 +455,88 @@ const closestElement = (arr, target) => {
 }
 
 // const array = [1, 2, 4, 5, 6, 6, 8, 9];
-console.log(closestElement(array, 7)); // Doit afficher 6
+// console.log(closesstElement(array, 7)); // Doit afficher 6
+
+
+
+/*
+Exercice : Recherche Binaire dans un Array Trié de Manière Non-Conventionnelle
+
+Imaginez que vous avez un array d'entiers qui commence par une série de nombres en ordre décroissant, suivie d'une série de nombres en ordre croissant. Par exemple, l'array pourrait ressembler à [8, 6, 4, 1, 3, 5, 7]. Votre tâche est de trouver un élément spécifique dans cet array en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array trié de manière non-conventionnelle (comme décrit ci-dessus) et un entier cible à rechercher.
+Utilisez la recherche binaire pour trouver l'index de cet entier cible dans l'array.
+Si l'entier cible est trouvé, retournez son index. Sinon, retournez -1.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [8, 6, 4, 1, 3, 5, 7], cible = 5
+
+Sortie : 5 (car 5 est à l'index 5 dans l'array)
+
+Entrée : array = [8, 6, 4, 1, 3, 5, 7], cible = 2
+
+Sortie : -1 (car 2 n'est pas présent dans l'array)
+
+*/
+
+const binaryGoal = (arr, target) => {
+
+    let low = 0;
+    let high = arr.length -1;
+
+    while(low <= high){
+
+        let mid = Math.floor((low + high) / 2);
+
+        if(target === arr[mid]){
+            return arr[mid];
+        }
+
+        if(arr[low] > arr[mid]){
+
+
+
+        }
+
+    }
+
+    return -1;
+}
+
+console.log(binaryGoal([8, 6, 4, 1, 3, 5, 7], 2))
+
+const binaryGoal = (arr, target) => {
+    let low = 0;
+    let high = arr.length - 1;
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+
+        if (target === arr[mid]) {
+            return mid;
+        }
+
+        // Vérifie si mid est dans la partie décroissante
+        if (arr[mid] > arr[high]) {
+            if (target > arr[mid] || target <= arr[high]) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        } 
+        // Sinon, mid est dans la partie croissante
+        else {
+            if (target > arr[mid]) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+    }
+
+    return -1;
+}
+
+console.log(binaryGoal([8, 6, 4, 1, 3, 5, 7], 2)); // Doit retourner -1 puisque 2 n'est pas dans l'array
