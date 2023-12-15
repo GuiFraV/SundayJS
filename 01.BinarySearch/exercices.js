@@ -350,7 +350,7 @@ Cet exercice est intéressant car il teste votre capacité à adapter l'algorith
 
 */
 
-const b = array = [10, 8, 6, 4, 2];
+// const b = array = [10, 8, 6, 4, 2];
 
 const findElement = (arr, target) => {
 
@@ -377,4 +377,82 @@ const findElement = (arr, target) => {
 
 }
 
-console.log(findElement(b, 10))
+// console.log(findElement(b, 10))
+
+/*
+
+Exercice : Trouver le Plus Proche Nombre dans un Array Trié
+
+Supposons que vous avez un array d'entiers trié en ordre croissant. Votre tâche est de trouver l'élément dans cet array qui est le plus proche d'un nombre cible donné. Si deux nombres sont également proches, retournez le nombre inférieur.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array trié et un entier cible.
+Utilisez la recherche binaire pour trouver l'élément de l'array qui est le plus proche de la cible.
+Retournez cet élément.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [1, 2, 4, 5, 6, 6, 8, 9], cible = 7
+
+Sortie : 6 (car 6 est le nombre le plus proche de 7 dans l'array)
+
+Entrée : array = [1, 3, 5, 7, 9, 11], cible = 6
+
+Sortie : 5 (car 5 est le nombre le plus proche de 6 dans l'array)
+
+*/
+
+const closestElement = (arr, target) => {
+
+    let low = 0;
+    let high = arr.length -1;
+
+    while(low <= high){
+
+        let mid = Math.floor((low + high) / 2);
+
+        if(target > arr[mid]){
+            low = mid + 1;
+        }else{
+            high = mid -1;
+        }
+    }
+
+    return arr[high]
+}
+
+const array = [1, 2, 4, 5, 6, 6, 8, 9]
+
+console.log(closestElement(array, 7));
+
+const closestElement = (arr, target) => {
+    let low = 0;
+    let high = arr.length - 1;
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+
+        if (target > arr[mid]) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+
+    // Après la boucle, vérifiez si low ou high est plus proche de la cible.
+    // Assurez-vous également que low et high sont dans les limites de l'array.
+    if (low < arr.length && high >= 0) {
+        if (Math.abs(arr[low] - target) < Math.abs(arr[high] - target)) {
+            return arr[low];
+        } else {
+            return arr[high];
+        }
+    } else if (low < arr.length) {
+        return arr[low];
+    } else {
+        return arr[high];
+    }
+}
+
+// const array = [1, 2, 4, 5, 6, 6, 8, 9];
+console.log(closestElement(array, 7)); // Doit afficher 6
