@@ -587,6 +587,58 @@ const findSeuil = (arr, target) => {
     }
 }
 
-console.log(temp.sort((a,b) => a - b));
+// console.log(temp.sort((a,b) => a - b));
 
-console.log(findSeuil(temp, seuil))
+// console.log(findSeuil(temp, seuil))
+
+
+/*
+
+Exercice : Trouver la Première Lettre Plus Grande dans un Array de Caractères Trié
+
+Imaginez que vous avez un array de caractères (lettres) trié en ordre alphabétique. Votre tâche est de trouver la première lettre dans cet array qui est plus grande qu'une lettre cible donnée en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array de caractères trié et un caractère cible.
+Utilisez la recherche binaire pour trouver l'index de la première lettre qui est plus grande que le caractère cible.
+Retournez cette lettre. Si aucune lettre dans l'array n'est plus grande que le caractère cible, retournez null.
+Exemple d'entrée et de sortie :
+
+Entrée : array = ['a', 'c', 'f', 'h'], cible = f
+
+Sortie : h (car 'h' est la première lettre qui est plus grande que 'f')
+
+Entrée : array = ['a', 'c', 'f', 'h'], cible = h
+
+Sortie : null (car il n'y a pas de lettre plus grande que 'h' dans l'array)
+
+*/
+
+const enter = ['a', 'c', 'f', 'h'];
+const cible = 'h';
+
+
+const findFirstBiggerAlphabet = (arr, target) => {
+
+    let low = 0 ;
+    let high = arr.length -1;
+
+    while (low <= high){
+
+        let mid = Math.floor((low + high) / 2);
+
+        if(target === arr[mid]){
+            return arr[mid + 1];
+        }
+
+        if(target > arr[mid]){
+            low = mid + 1;
+        }else{
+            high = mid - 1;
+        }
+
+    }
+}
+
+console.log(findFirstBiggerAlphabet(enter, cible))
