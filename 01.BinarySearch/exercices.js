@@ -641,4 +641,55 @@ const findFirstBiggerAlphabet = (arr, target) => {
     }
 }
 
-console.log(findFirstBiggerAlphabet(enter, cible))
+// console.log(findFirstBiggerAlphabet(enter, cible))
+
+
+/*
+
+Exercice : Recherche Binaire pour un Logement Abordable
+
+Imaginez que vous avez un array représentant le prix des logements dans un quartier, trié du moins cher au plus cher. Votre tâche est de trouver le nombre de logements abordables par rapport à un budget donné, en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array de prix trié et un budget maximal.
+Utilisez la recherche binaire pour trouver l'index du dernier logement que vous pouvez vous permettre (dont le prix est inférieur ou égal à votre budget).
+Retournez le nombre de logements que vous pouvez vous permettre, ce qui correspond à l'index trouvé plus un, car les indices commencent à zéro.
+Exemple d'entrée et de sortie :
+
+Entrée : prix = [100, 200, 300, 400, 500], budget = 350
+Sortie : 4 (car vous pouvez vous permettre les logements aux indices 0, 1, 2 et 3, soit 4 logements au total)
+
+
+*/
+
+
+const prix = [150, 200, 250, 300, 350, 400];
+const budget = 280;
+
+const findCando = (arr, target) => {
+
+    let low = 0 ;
+    let high = arr.length -1;
+    let mid = 0;
+
+    while (low <= high){
+
+        mid = Math.floor((low + high) / 2);
+
+        if(target > arr[mid]){
+            low = mid + 1;
+        }else{
+            high = mid - 1;
+        }
+
+    }
+
+    if(arr[low] > target){
+        return mid + 1;
+    }else{
+        return 0;
+    }
+}
+
+console.log(findCando(prix, budget));
