@@ -481,62 +481,112 @@ Sortie : -1 (car 2 n'est pas présent dans l'array)
 
 */
 
-const binaryGoal = (arr, target) => {
+// const binaryGoal = (arr, target) => {
 
+//     let low = 0;
+//     let high = arr.length -1;
+
+//     while(low <= high){
+
+//         let mid = Math.floor((low + high) / 2);
+
+//         if(target === arr[mid]){
+//             return arr[mid];
+//         }
+
+//         if(arr[low] > arr[mid]){
+
+
+
+//         }
+
+//     }
+
+//     return -1;
+// }
+
+// console.log(binaryGoal([8, 6, 4, 1, 3, 5, 7], 2))
+
+// const binaryGoal = (arr, target) => {
+//     let low = 0;
+//     let high = arr.length - 1;
+
+//     while (low <= high) {
+//         let mid = Math.floor((low + high) / 2);
+
+//         if (target === arr[mid]) {
+//             return mid;
+//         }
+
+//         // Vérifie si mid est dans la partie décroissante
+//         if (arr[mid] > arr[high]) {
+//             if (target > arr[mid] || target <= arr[high]) {
+//                 low = mid + 1;
+//             } else {
+//                 high = mid - 1;
+//             }
+//         } 
+//         // Sinon, mid est dans la partie croissante
+//         else {
+//             if (target > arr[mid]) {
+//                 low = mid + 1;
+//             } else {
+//                 high = mid - 1;
+//             }
+//         }
+//     }
+
+//     return -1;
+// }
+
+// console.log(binaryGoal([8, 6, 4, 1, 3, 5, 7], 2)); // Doit retourner -1 puisque 2 n'est pas dans l'array
+
+/*
+
+    Exercice : Trouver le Seuil dans un Array de Températures
+
+    Imaginez que vous avez un array de températures journalières enregistrées sur une période d'un mois. Les températures sont enregistrées de manière désordonnée. Votre tâche est de trouver le premier jour où la température dépasse un certain seuil en utilisant la recherche binaire.
+
+    Instructions :
+
+    Écrivez une fonction en JavaScript qui prend deux arguments : un array de températures et un seuil de température.
+    Le array n'est pas trié, donc commencez par trier le array.
+    Utilisez ensuite la recherche binaire pour trouver le premier jour où la température dépasse le seuil donné.
+    Retournez l'index de ce jour dans le array trié. Si aucun jour ne dépasse le seuil, retournez -1.
+    Exemple d'entrée et de sortie :
+
+    Entrée : températures = [18, 23, 20, 15, 25, 30, 16], seuil = 24
+    Sortie : 4 (car le premier jour où la température dépasse 24 est le jour 4 avec une température de 25, dans l'array trié)
+
+*/
+
+
+const temp = [18, 23, 20, 15, 25, 30, 16];
+const seuil = 24;
+
+const findSeuil = (arr, target) => {
+    let sortTemp = arr.sort((a, b) => a - b);
     let low = 0;
-    let high = arr.length -1;
-
-    while(low <= high){
-
-        let mid = Math.floor((low + high) / 2);
-
-        if(target === arr[mid]){
-            return arr[mid];
-        }
-
-        if(arr[low] > arr[mid]){
-
-
-
-        }
-
-    }
-
-    return -1;
-}
-
-console.log(binaryGoal([8, 6, 4, 1, 3, 5, 7], 2))
-
-const binaryGoal = (arr, target) => {
-    let low = 0;
-    let high = arr.length - 1;
+    let high = sortTemp.length - 1;
 
     while (low <= high) {
         let mid = Math.floor((low + high) / 2);
 
-        if (target === arr[mid]) {
-            return mid;
-        }
-
-        // Vérifie si mid est dans la partie décroissante
-        if (arr[mid] > arr[high]) {
-            if (target > arr[mid] || target <= arr[high]) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
-        } 
-        // Sinon, mid est dans la partie croissante
-        else {
-            if (target > arr[mid]) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
+        if (target >= sortTemp[mid]) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
         }
     }
 
-    return -1;
+    // low est maintenant l'index du premier élément supérieur au seuil ou égal à la taille de l'array.
+    if (low < sortTemp.length && sortTemp[low] > target) {
+        return low; // Retourne l'index
+    } else {
+        return -1; // Aucun élément ne dépasse le seuil
+    }
 }
 
-console.log(binaryGoal([8, 6, 4, 1, 3, 5, 7], 2)); // Doit retourner -1 puisque 2 n'est pas dans l'array
+console.log(temp.sort((a,b) => a - b));
+
+console.log(findSeuil(temp, seuil))
