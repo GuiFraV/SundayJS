@@ -692,4 +692,80 @@ const findCando = (arr, target) => {
     }
 }
 
-console.log(findCando(prix, budget));
+// console.log(findCando(prix, budget));
+
+
+
+/*
+
+Exercice : Trouver le Maximum d'un Array Trié et Roté
+
+Imaginez que vous avez un array d'entiers qui a été initialement trié en ordre croissant, puis roté à un certain point. Par exemple, si l'array original était [1, 2, 3, 4, 5] et qu'il a été roté à partir de l'index 3, il pourrait ressembler à [4, 5, 1, 2, 3]. Votre tâche est de trouver le maximum de cet array en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend un array trié puis roté en tant qu'entrée.
+Utilisez la recherche binaire pour trouver l'élément maximal dans l'array.
+Retournez cet élément maximal.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [4, 5, 1, 2, 3]
+Sortie : 5 (car 5 est le maximum dans l'array)
+
+*/
+
+// const a = [4, 5, 1, 2, 3]; 5
+// const a = [6, 7, 8, 9, 1, 2, 3, 4, 5];
+// const a = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const a = [2, 3, 4, 5, 6, 7, 8, 9, 10, 1];
+// const a = [5, 6, 7, 8, 9, 10, 1, 2, 3, 4];
+
+// const a = [1];
+// const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const all = [
+    [4, 5, 1, 2, 3],
+    [6, 7, 8, 9, 1, 2, 3, 4, 5],
+    [10, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [2, 3, 4, 5, 6, 7, 8, 9, 10, 1],
+    [5, 6, 7, 8, 9, 10, 1, 2, 3, 4],
+    [1],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9]
+]
+
+const rotateArray = (arr) => {
+
+    let low = 0;
+    let high = arr.length -1;
+
+    
+    while(low <= high){
+        
+        let mid = Math.floor((low + high) / 2);
+
+        if(arr[mid + 1] !== undefined){
+
+            if(arr[mid] <= arr[mid - 1]){
+                return arr[mid - 1];
+            }
+            if(arr[low] <= arr[mid]){
+                low = mid + 1;
+            }else{
+                high = mid -1;
+            }
+        }else if(arr[mid] < arr[mid -1]){
+            return arr[mid -1];
+        }else{
+            return arr[mid];
+        }
+
+    }
+}
+
+// Une valeur 
+// Un array "roté"
+
+
+for(let i = 0 ; i <all.length; i++){
+    console.log(rotateArray(all[i]))
+}
