@@ -723,15 +723,15 @@ Sortie : 5 (car 5 est le maximum dans l'array)
 // const a = [1];
 // const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const all = [
-    [4, 5, 1, 2, 3],
-    [6, 7, 8, 9, 1, 2, 3, 4, 5],
-    [10, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [2, 3, 4, 5, 6, 7, 8, 9, 10, 1],
-    [5, 6, 7, 8, 9, 10, 1, 2, 3, 4],
-    [1],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9]
-]
+// const all = [
+//     [4, 5, 1, 2, 3],
+//     [6, 7, 8, 9, 1, 2, 3, 4, 5],
+//     [10, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+//     [2, 3, 4, 5, 6, 7, 8, 9, 10, 1],
+//     [5, 6, 7, 8, 9, 10, 1, 2, 3, 4],
+//     [1],
+//     [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// ]
 
 const rotateArray = (arr) => {
 
@@ -766,6 +766,91 @@ const rotateArray = (arr) => {
 // Un array "roté"
 
 
-for(let i = 0 ; i <all.length; i++){
-    console.log(rotateArray(all[i]))
+// for(let i = 0 ; i <all.length; i++){
+//     console.log(rotateArray(all[i]))
+// }
+
+/*
+
+Bien sûr, voici un autre exercice de recherche binaire pour vous entraîner :
+
+Exercice : Trouver le Point de Basculage dans un Array de Nombres
+
+Imaginez que vous avez un array d'entiers où les nombres commencent par augmenter et atteignent un point où ils commencent à diminuer. Votre tâche est de trouver l'index de ce point de basculement (le maximum local) en utilisant la recherche binaire. C'est un peu comme trouver le sommet d'une montagne dans un profil montagneux.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend un array de nombres comme argument.
+Utilisez la recherche binaire pour trouver l'index du point de basculement où les nombres cessent d'augmenter et commencent à diminuer.
+Retournez cet index.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [1, 2, 4, 8, 10, 9, 7, 5]
+Sortie : 4 (car l'élément à l'index 4 est 10, qui est le point de basculement)
+
+*/
+
+// const ar = [1, 2, 4, 8, 10, 9, 7, 5];
+
+const all = [
+    [1, 2, 4, 8, 10, 9, 7, 5], // 4
+    [3, 5, 8, 12, 15, 14, 10, 6], // 4
+
+    [1, 3, 5, 7, 9, 8, 6, 4, 2], // 4
+
+    [10, 20, 30, 40, 50, 40, 30, 20, 10], 
+    [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1],
+    [7, 10, 11, 12, 9, 5, 2],
+    [1, 2, 1]
+]
+
+// const basculage = (arr) => {
+
+//     let low = 0;
+//     let high = arr.length -1;
+
+//     while(low <= high){
+
+//         let mid = Math.floor((low + high) / 2);
+
+//         console.log(`Ce-ci est le mid : ${arr[mid]} et ça c'est mid + 1 ${arr[mid +1]}`)
+
+//         if(arr[mid] > arr[mid +1]){
+//             return mid;
+//         }
+//         if(arr[mid] < arr[mid +1]){
+//             return mid + 1;
+//         }
+//         if(arr[low] <= arr[mid]){
+//             low = mid +1;
+//         }else{
+//             high = mid -1;
+//         }
+
+//     }
+
+// }
+
+const basculage = (arr) => {
+    let low = 0;
+    let high = arr.length - 1;
+
+    while (low < high) { // Utilisez < au lieu de <=
+        let mid = Math.floor((low + high) / 2);
+
+        if (arr[mid] > arr[mid + 1]) {
+            // Point de basculement potentiel trouvé, continuer à chercher à gauche
+            high = mid;
+        } else {
+            // Continuer à chercher à droite
+            low = mid + 1;
+        }
+    }
+
+    return low; // low et high convergent vers l'index du point de basculement
+}
+
+
+for(let i = 0; i < all.length; i++){
+    console.log(basculage(all[i]));
 }
