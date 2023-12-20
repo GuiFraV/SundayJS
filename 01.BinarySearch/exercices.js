@@ -792,17 +792,6 @@ Sortie : 4 (car l'élément à l'index 4 est 10, qui est le point de basculement
 
 // const ar = [1, 2, 4, 8, 10, 9, 7, 5];
 
-const all = [
-    [1, 2, 4, 8, 10, 9, 7, 5], // 4
-    [3, 5, 8, 12, 15, 14, 10, 6], // 4
-
-    [1, 3, 5, 7, 9, 8, 6, 4, 2], // 4
-
-    [10, 20, 30, 40, 50, 40, 30, 20, 10], 
-    [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1],
-    [7, 10, 11, 12, 9, 5, 2],
-    [1, 2, 1]
-]
 
 // const basculage = (arr) => {
 
@@ -831,6 +820,19 @@ const all = [
 
 // }
 
+// const all = [
+//     [1, 2, 4, 8, 10, 9, 7, 5], // 4
+//     [3, 5, 8, 12, 15, 14, 10, 6], // 4
+
+//     [1, 3, 5, 7, 9, 8, 6, 4, 2], // 4
+
+//     [10, 20, 30, 40, 50, 40, 30, 20, 10], 
+//     [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1],
+//     [7, 10, 11, 12, 9, 5, 2],
+//     [1, 2, 1]
+// ]
+
+
 const basculage = (arr) => {
     let low = 0;
     let high = arr.length - 1;
@@ -851,6 +853,106 @@ const basculage = (arr) => {
 }
 
 
-for(let i = 0; i < all.length; i++){
-    console.log(basculage(all[i]));
+// for(let i = 0; i < all.length; i++){
+//     console.log(basculage(all[i]));
+// }
+
+
+/*
+
+Exercice : Trouver l'Élément Manquant dans une Suite Arithmétique
+
+Imaginez que vous avez une suite arithmétique (une séquence de nombres où la différence entre les termes consécutifs est constante) stockée dans un array, mais un des éléments de cette suite est manquant. Votre tâche est de trouver cet élément manquant en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend un array représentant une suite arithmétique avec un élément manquant.
+Utilisez la recherche binaire pour trouver et retourner l'élément manquant dans la suite.
+La différence entre les termes consécutifs de la suite est constante.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [1, 3, 4, 5, 6] (la différence est 1, et le nombre 2 manque)
+Sortie : 2
+
+*/
+
+
+const arra = [1, 3, 4, 5, 6];
+
+const all = [
+    [1, 3, 4, 5, 6], // 2
+    [2, 4, 6, 8, 10, 12, 14, 16, 18, 22, 24], // 20
+    [10, 15, 20, 25, 30, 35, 40, 45, 55, 60], // 50
+    [3, 6, 9, 12, 15, 18, 24, 27, 30], // 21
+    [5, 10, 15, 20, 25, 35, 40, 45], // 30
+    [100, 105, 110, 115, 120, 125, 130, 135, 145], // 140
+    [50, 52, 54, 56, 60, 62] // 58
+
+]
+
+// const arithmetiqueSuite = (arr) => {
+
+//     let low = 0;
+//     let high = arr.length -1;
+
+//     let number = 0;
+
+//     while(low <= high){
+
+//         let mid = Math.floor((low + high) / 2);
+
+//         if(arr[low] > arr[mid]){
+//             high = mid -1;
+//         }else{
+//             number = arr[high] - arr[mid];
+//             low = mid + 1;
+//         }
+
+
+//         // if(number >= arr[low]){
+//         //     number = arr[mid + 1] - arr[mid];
+//         //     low = mid + 1;
+//         // }else{
+//         //     high = mid - 1;
+//         // }
+
+//     }
+
+//     return number;
+
+// }
+
+// // console.log(arithmetiqueSuite(arra));
+
+// for(let i = 0 ; i < all.length; i++){
+
+//     console.log(arithmetiqueSuite(all[i]))
+
+const arithmetiqueSuite = (arr) => {
+    let low = 0;
+    let high = arr.length - 1;
+    let diff = (arr[high] - arr[low]) / arr.length; // Calculer la différence attendue
+
+    while (low < high) {
+        let mid = Math.floor((low + high) / 2);
+
+        // Vérifier si la différence est maintenue
+        if (arr[mid] - arr[low] === diff * (mid - low)) {
+            // Si oui, l'élément manquant est dans la moitié droite
+            low = mid + 1;
+        } else {
+            // Sinon, il est dans la moitié gauche
+            high = mid;
+        }
+    }
+
+    // L'élément manquant est la valeur attendue à l'index 'low'
+    return arr[low - 1] + diff;
+}
+
+// Exemples de test
+console.log(arithmetiqueSuite([1, 3, 4, 5, 6])); // Sortie attendue: 2
+
+for(let i = 0 ; i < all.length; i++){
+    console.log(arithmetiqueSuite(all[i]))
 }
