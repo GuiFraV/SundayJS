@@ -951,8 +951,58 @@ const arithmetiqueSuite = (arr) => {
 }
 
 // Exemples de test
-console.log(arithmetiqueSuite([1, 3, 4, 5, 6])); // Sortie attendue: 2
+// console.log(arithmetiqueSuite([1, 3, 4, 5, 6])); // Sortie attendue: 2
 
-for(let i = 0 ; i < all.length; i++){
-    console.log(arithmetiqueSuite(all[i]))
+// for(let i = 0 ; i < all.length; i++){
+//     console.log(arithmetiqueSuite(all[i]))
+// }
+
+
+/*
+
+
+
+Bien sûr ! Voici un autre exercice de recherche binaire pour vous entraîner :
+
+Exercice : Trouver la Position d'Insertion dans un Array Trié
+
+Imaginez que vous avez un array d'entiers trié en ordre croissant. Votre tâche est de trouver la position à laquelle un nouvel entier donné devrait être inséré pour maintenir l'ordre du array. Si l'entier est déjà présent dans le array, retournez l'index où il pourrait être inséré de manière à maintenir l'ordre.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array trié et un entier cible à insérer.
+Utilisez la recherche binaire pour trouver l'index où la cible devrait être insérée.
+Retournez cet index.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [1, 3, 5, 6], cible = 5
+
+Sortie : 2 (car 5 est déjà présent à l'index 2)
+
+Entrée : array = [1, 3, 5, 6], cible = 2
+
+Sortie : 1 (car 2 devrait être inséré à l'index 1 pour maintenir l'ordre)
+
+Entrée : array = [1, 3, 5, 6], cible = 7
+
+Sortie : 4 (car 7 devrait être inséré à la fin, à l'index 4)
+
+
+*/
+
+const w = [1, 3, 5, 6];
+
+const findPositionToInsert = (arr, target) => {
+    let low = 0 ;
+    while(low <= high){
+        let mid = Math.floor((low + high) / 2);
+        if(target > arr[mid]){
+            low = mid + 1;
+        }else{
+            high = mid -1;
+        }
+    }
+    return low
 }
+
+console.log(findPositionToInsert(w, 2))
