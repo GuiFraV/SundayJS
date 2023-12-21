@@ -52,12 +52,28 @@ const optiPrimeNumber = (nbr) => {
 
 } 
 
-console.log(optiPrimeNumber(1))
-console.log(optiPrimeNumber(2))
-console.log(optiPrimeNumber(3))
-console.log(optiPrimeNumber(4))
-console.log(optiPrimeNumber(5))
-console.log(optiPrimeNumber(6))
-console.log(optiPrimeNumber(7))
-console.log(optiPrimeNumber(8))
-console.log(optiPrimeNumber(9))
+// console.log(optiPrimeNumber(1))
+// console.log(optiPrimeNumber(2))
+// console.log(optiPrimeNumber(3))
+// console.log(optiPrimeNumber(4))
+// console.log(optiPrimeNumber(5))
+// console.log(optiPrimeNumber(6))
+// console.log(optiPrimeNumber(7))
+// console.log(optiPrimeNumber(8))
+// console.log(optiPrimeNumber(9))
+
+const fib = (nbr) => {
+
+    if(nbr <= 1){
+        return nbr;
+    }
+    return fib(nbr - 1) + fib(nbr - 2);
+}
+
+console.log(fib(1))
+console.log(fib(2))
+console.log(fib(3))
+console.log(fib(4))
+console.log(fib(5))
+console.log(fib(6))
+console.log(fib(7))
