@@ -70,10 +70,53 @@ const fib = (nbr) => {
     return fib(nbr - 1) + fib(nbr - 2);
 }
 
-console.log(fib(1))
-console.log(fib(2))
-console.log(fib(3))
-console.log(fib(4))
-console.log(fib(5))
-console.log(fib(6))
-console.log(fib(7))
+// console.log(fib(1))
+// console.log(fib(2))
+// console.log(fib(3))
+// console.log(fib(4))
+// console.log(fib(5))
+// console.log(fib(6))
+// console.log(fib(7))
+
+
+const competitions = [
+    ["HTML", "C#"],
+    ["C#", "Python"],
+    ["Python", "HTML"]
+]
+
+const results = [0, 0 ,1]
+
+const winningTeam = (team, res) => {
+
+    let obj = {};
+
+    for(let i = 0 ; i < team.length; i++){
+
+        let homeTeam = team[i][0];
+        let awayTeam = team[i][1];
+        
+        if(res[i] === 0){
+
+            if(obj[awayTeam]){
+                obj[awayTeam] += 3
+            }else{
+                obj[awayTeam] = 3;
+            }
+
+        }else{
+
+            if(obj[homeTeam]){
+                obj[homeTeam] += 3
+            }else{
+                obj[homeTeam] = 3;
+            }
+        }
+    }
+
+    let r = Object.entries(obj).sort((a,b) => b[0] - a[1])
+    return r[1][0];
+}
+
+console.log(winningTeam(competitions, results));
+
