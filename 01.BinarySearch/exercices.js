@@ -960,10 +960,6 @@ const arithmetiqueSuite = (arr) => {
 
 /*
 
-
-
-Bien sûr ! Voici un autre exercice de recherche binaire pour vous entraîner :
-
 Exercice : Trouver la Position d'Insertion dans un Array Trié
 
 Imaginez que vous avez un array d'entiers trié en ordre croissant. Votre tâche est de trouver la position à laquelle un nouvel entier donné devrait être inséré pour maintenir l'ordre du array. Si l'entier est déjà présent dans le array, retournez l'index où il pourrait être inséré de manière à maintenir l'ordre.
@@ -990,19 +986,67 @@ Sortie : 4 (car 7 devrait être inséré à la fin, à l'index 4)
 
 */
 
-const w = [1, 3, 5, 6];
+// const w = [1, 3, 5, 6];
 
-const findPositionToInsert = (arr, target) => {
-    let low = 0 ;
+// const findPositionToInsert = (arr, target) => {
+//     let low = 0 ;
+//     while(low <= high){
+//         let mid = Math.floor((low + high) / 2);
+//         if(target > arr[mid]){
+//             low = mid + 1;
+//         }else{
+//             high = mid -1;
+//         }
+//     }
+//     return low
+// }
+
+// console.log(findPositionToInsert(w, 2))
+
+
+/*
+
+Exercice : Trouver le Plus Petit Nombre Plus Grand que la Cible
+
+Imaginez que vous avez un array trié d'entiers et un nombre cible. Votre tâche est de trouver le plus petit nombre dans l'array qui est plus grand que le nombre cible en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array trié et un nombre cible.
+Utilisez la recherche binaire pour trouver le plus petit nombre dans l'array qui est plus grand que la cible.
+Retournez ce nombre. Si aucun nombre dans l'array n'est plus grand que la cible, retournez null.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [1, 3, 5, 7, 9], cible = 6
+
+Sortie : 7 (car 7 est le plus petit nombre plus grand que 6)
+
+Entrée : array = [1, 2, 3, 4, 5], cible = 5
+
+Sortie : null (car il n'y a pas de nombre plus grand que 5 dans l'array)
+
+
+*/
+
+const r = [1, 2, 3, 4, 5];
+
+const findMinimumBeforeNum = (arr, target) => {
+
+    let low = 0;
+    let high = arr.length -1
+
     while(low <= high){
+
         let mid = Math.floor((low + high) / 2);
+
         if(target > arr[mid]){
-            low = mid + 1;
+            low  = mid + 1;
         }else{
-            high = mid -1;
+            high = mid - 1;
         }
     }
-    return low
+
+    return arr[low];
 }
 
-console.log(findPositionToInsert(w, 2))
+console.log(findMinimumBeforeNum(r, 5))
