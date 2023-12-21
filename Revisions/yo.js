@@ -118,5 +118,34 @@ const winningTeam = (team, res) => {
     return r[1][0];
 }
 
-console.log(winningTeam(competitions, results));
+// console.log(winningTeam(competitions, results));
+
+const fiib = (nbr) => {
+
+    if(nbr <= 1){
+        return nbr;
+    }
+
+    let a = 0;
+    let b = 1;
+
+    for(let i = 0; i < nbr; i++){
+
+        let res = a + b;
+        a = b;
+        b = res;
+    }
+
+    return b;
+}
+
+console.log(fiib(1))
+console.log(fiib(2))
+console.log(fiib(3))
+console.log(fiib(4))
+console.log(fiib(5))
+console.log(fiib(6))
+console.log(fiib(7))
+console.log(fiib(8))
+console.log(fiib(9))
 
