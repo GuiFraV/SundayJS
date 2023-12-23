@@ -1049,4 +1049,56 @@ const findMinimumBeforeNum = (arr, target) => {
     return arr[low];
 }
 
-console.log(findMinimumBeforeNum(r, 5))
+// console.log(findMinimumBeforeNum(r, 5))
+
+
+/*
+
+Exercice : Trouver le Dernier Nombre Inférieur à la Cible
+
+Imaginez que vous avez un array trié d'entiers et un nombre cible. Votre tâche est de trouver le dernier nombre dans l'array qui est inférieur à la cible en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array trié et un nombre cible.
+Utilisez la recherche binaire pour trouver le dernier nombre dans l'array qui est inférieur à la cible.
+Retournez ce nombre. Si aucun nombre dans l'array n'est inférieur à la cible, retournez null.
+Exemple d'entrée et de sortie :
+
+Entrée : array = [1, 2, 3, 4, 5, 6, 7], cible = 5
+
+Sortie : 4 (car 4 est le dernier nombre inférieur à 5)
+
+Entrée : array = [1, 3, 5, 7, 9, 11, 13], cible = 2
+
+Sortie : 1 (car 1 est le seul nombre inférieur à 2)
+
+*/
+
+const o = [1, 3, 5, 7, 9, 11, 13];
+// const o = [2, 4, 6, 8, 10];
+
+const binarySearchLast = (arr, target) => {
+    let low = 0;
+    let high = arr.length - 1;
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+
+        if (target > arr[mid]) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+
+    // Après la boucle, low est l'index du premier élément supérieur à la cible
+    // ou égal à la longueur de l'array si tous les éléments sont inférieurs à la cible.
+    if (low > 0 && arr[low - 1] < target) {
+        return arr[low - 1];
+    }
+
+    return null; // Aucun élément inférieur à la cible
+}
+
+console.log(binarySearchLast(o, 2))
