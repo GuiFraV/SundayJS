@@ -1101,4 +1101,49 @@ const binarySearchLast = (arr, target) => {
     return null; // Aucun élément inférieur à la cible
 }
 
-console.log(binarySearchLast(o, 2))
+// console.log(binarySearchLast(o, 2))
+
+
+/*
+
+Exercice : Trouver la Puissance d'un Nombre
+
+Imaginez que vous devez calculer la puissance n d'un nombre x (c'est-à-dire x^n), mais vous souhaitez le faire de manière plus efficace que la méthode naïve qui utilise des multiplications répétées. Votre tâche est d'implémenter une méthode de recherche binaire pour calculer x^n.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un nombre x et un entier positif n.
+Utilisez une approche de recherche binaire ou une méthode de division et de conquête pour calculer x^n.
+Retournez le résultat de x^n.
+Exemple d'entrée et de sortie :
+
+Entrée : x = 2, n = 10
+
+Sortie : 1024 (car 2^10 = 1024)
+
+Entrée : x = 5, n = 3
+
+Sortie : 125 (car 5^3 = 125)
+
+*/
+
+function power(x, n) {
+    if (n === 0) {
+        return 1; // La base de la récursion : n'importe quel nombre à la puissance 0 est 1
+    }
+
+    // Calculer x^(n/2) de manière récursive
+    let halfPower = power(x, Math.floor(n / 2));
+
+    if (n % 2 === 0) {
+        // Si n est pair, x^n = (x^(n/2))^2
+        return halfPower * halfPower;
+    } else {
+        // Si n est impair, x^n = x * (x^(n-1/2))^2
+        return x * halfPower * halfPower;
+    }
+}
+
+// Exemples de test
+console.log(power(2, 10)); // 1024
+console.log(power(5, 3)); // 125
