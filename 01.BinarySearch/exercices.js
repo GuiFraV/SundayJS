@@ -1144,6 +1144,111 @@ function power(x, n) {
     }
 }
 
+// // Exemples de test
+// console.log(power(2, 10)); // 1024
+// console.log(power(5, 3)); // 125
+
+/*
+Exercice : Trouver la Capacité Minimale d'un Disque Dur pour Stocker des Fichiers
+
+Imaginez que vous avez un certain nombre de fichiers de tailles différentes à stocker sur un disque dur. Vous voulez trouver la capacité minimale requise pour un disque dur afin de stocker tous ces fichiers. Les tailles des fichiers sont données dans un array, et la capacité des disques durs disponibles est également donnée dans un autre array. Votre tâche est d'utiliser la recherche binaire pour déterminer la plus petite capacité de disque dur qui peut stocker tous vos fichiers.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array représentant les tailles des fichiers et un array représentant les capacités des disques durs disponibles.
+Les deux arrays sont triés en ordre croissant.
+Utilisez la recherche binaire pour trouver la plus petite capacité de disque dur dans le deuxième array qui est suffisante pour stocker tous les fichiers du premier array.
+Retournez cette capacité minimale. Si aucun disque dur n'est assez grand, retournez null.
+Exemple d'entrée et de sortie :
+
+Entrée : tailles des fichiers = [100, 200, 300, 400], capacités des disques durs = [500, 1000, 1500, 2000]
+
+Sortie : 1000 (car un disque dur de 1000 Go est le plus petit qui peut contenir tous les fichiers)
+
+Entrée : tailles des fichiers = [500, 500, 500, 500], capacités des disques durs = [1000, 2000, 3000, 4000]
+
+Sortie : 2000 (car un disque dur de 2000 Go est nécessaire pour contenir tous les fichiers)
+
+*/
+
+const sizeFile = [100, 200, 300, 400];
+const sizeHardDisk = [500, 1000, 1500, 2000];
+
+const sizeFile2 = [500, 500, 500, 500];
+const sizeHardDisk2 = [500, 1000, 1500, 2000]
+
+const findMaxCap = (file, disk) => {
+
+    let low = 0;
+    let high = disk.length -1;
+    let allFileSize = file.reduce((acc, curr) => acc+curr);
+    
+    while(low <= high){
+
+        let mid = Math.floor((low + high) / 2);
+
+        if(allFileSize === disk[mid]){
+            return disk[mid];
+        }
+
+        if(allFileSize < disk[mid]){
+            high = mid -1;
+        }else{
+            low = mid + 1;
+        }
+    }
+}
+
+/*
+const findMaxCap = (file, disk) => {
+    let low = 0;
+    let high = disk.length - 1;
+    let allFileSize = file.reduce((acc, curr) => acc + curr, 0);
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+
+        if (allFileSize <= disk[mid]) {
+            // Continuez à chercher dans la partie gauche pour trouver la plus petite capacité suffisante
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    // Vérifiez si la capacité trouvée est suffisante
+    if (low < disk.length && disk[low] >= allFileSize) {
+        return disk[low];
+    }
+
+    return null; // Aucune capacité suffisante trouvée
+}
+
 // Exemples de test
-console.log(power(2, 10)); // 1024
-console.log(power(5, 3)); // 125
+const sizeFile = [100, 200, 300, 400];
+const sizeHardDisk = [500, 1000, 1500, 2000];
+console.log(findMaxCap(sizeFile, sizeHardDisk)); // Devrait retourner la capacité minimale requise
+
+*/
+
+// console.log(findMaxCap(sizeFile, sizeHardDisk));
+// console.log(findMaxCap(sizeFile2, sizeHardDisk2));
+
+
+/*
+
+Exercice : Trouver le Nombre Maximum de Pages qu'un Étudiant Peut Lire
+
+Imaginez que vous êtes en charge d'attribuer des livres à des étudiants pour les lire pendant l'été. Chaque livre a un certain nombre de pages et vous voulez répartir les livres de manière équitable afin qu'aucun étudiant n'ait à lire beaucoup plus de pages que les autres. Votre tâche est de trouver le nombre maximal de pages qu'un étudiant devra lire en utilisant la recherche binaire.
+
+Instructions :
+
+Écrivez une fonction en JavaScript qui prend deux arguments : un array représentant le nombre de pages de chaque livre et un entier représentant le nombre d'étudiants.
+Utilisez la recherche binaire pour trouver le nombre maximal de pages qu'un étudiant devra lire, de sorte que tous les livres soient lus et que la charge de travail soit aussi équitable que possible.
+Retournez ce nombre maximal de pages.
+Exemple d'entrée et de sortie :
+
+Entrée : livres = [100, 200, 300, 400], étudiants = 2
+Sortie : 500 (car une répartition équitable des livres pourrait être [100, 400] pour un étudiant et [200, 300] pour l'autre, chacun lisant un total de 500 pages)
+*/
+
