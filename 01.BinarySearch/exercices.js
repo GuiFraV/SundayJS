@@ -1252,3 +1252,40 @@ Entrée : livres = [100, 200, 300, 400], étudiants = 2
 Sortie : 500 (car une répartition équitable des livres pourrait être [100, 400] pour un étudiant et [200, 300] pour l'autre, chacun lisant un total de 500 pages)
 */
 
+function canDistributeBooks(pages, students, maxPages) {
+    let studentRequired = 1;
+    let currentPageSum = 0;
+
+    for (let page of pages) {
+        if (currentPageSum + page > maxPages) {
+            studentRequired++;
+            currentPageSum = page;
+            if (studentRequired > students) return false;
+        } else {
+            currentPageSum += page;
+        }
+    }
+
+    return true;
+}
+
+function partitionPage(books, students) {
+    if (books.length < students) return -1;
+
+    let low = Math.max(...books);
+    let high = books.reduce((a, b) => a + b, 0);
+
+    while (low < high) {
+        let mid = Math.floor((low + high) / 2);
+        if (canDistributeBooks(books, students, mid)) {
+            high = mid;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    return low; // ou high, à ce stade low et high sont égaux
+}
+
+// Exemple de test
+console.log(partitionPage([120, 150, 180, 200, 250, 300], 3)); // Devrait afficher la capacité optimale
