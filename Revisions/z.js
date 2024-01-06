@@ -126,11 +126,22 @@ const fib = (nbr) => {
     return b;
 }
 
-console.log(fib(1))
-console.log(fib(2))
-console.log(fib(3))
-console.log(fib(4))
-console.log(fib(5))
-console.log(fib(6))
-console.log(fib(7))
-console.log(fib(8))
+
+
+const recursiveFib = (nbr) => {
+
+    if(nbr <= 1){
+        return nbr;
+    }
+
+    return recursiveFib(nbr - 1) + recursiveFib(nbr - 2);
+}
+
+console.log(recursiveFib(1))
+console.log(recursiveFib(2))
+console.log(recursiveFib(3))
+console.log(recursiveFib(4))
+console.log(recursiveFib(5))
+console.log(recursiveFib(6))
+console.log(recursiveFib(7))
+console.log(recursiveFib(8))
