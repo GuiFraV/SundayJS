@@ -110,3 +110,27 @@ const validateSubSequence = (arr, seq) => {
 }
 
 console.log(validateSubSequence(array,sequence))
+
+const fib = (nbr) => {
+
+    if(nbr <= 1){
+        return nbr;
+    }
+    let a = 0;
+    let b = 1;
+    for(let i = 0 ; i < nbr; i++){
+        let res = a + b;
+        a = b;
+        b = res;
+    }
+    return b;
+}
+
+console.log(fib(1))
+console.log(fib(2))
+console.log(fib(3))
+console.log(fib(4))
+console.log(fib(5))
+console.log(fib(6))
+console.log(fib(7))
+console.log(fib(8))
